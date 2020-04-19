@@ -24,3 +24,4 @@ hs_err_pid*
 
 .idea
 calculator.iml
+/out/production/calculator/META-INF/calculator.kotlin_module
