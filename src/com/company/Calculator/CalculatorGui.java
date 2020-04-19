@@ -1,7 +1,10 @@
-package com.company.CalculatorLogic;
+package com.company.Calculator;
+import com.company.Pair;
+
 import java.util.*;
 
-import static com.company.CalculatorLogic.InputBuilder.buildInput;
+import static com.company.Calculator.CalculatorLogic.calculate;
+import static com.company.Calculator.InputBuilder.buildInput;
 
 public class CalculatorGui {
 
@@ -10,13 +13,13 @@ public class CalculatorGui {
     // TODO menu logic
     public static void menu(ArrayList<String> validOperators) {
         Scanner scanner = new Scanner(System.in);
-        NavigableMap<String, String> equation = new TreeMap<>();
+        ArrayList<Pair<String, String>> equation = new ArrayList<>();
         boolean calculatorLoop = true;
         String previousInput = PLACE_HOLDER_INPUT;
         String input;
         while (calculatorLoop) {
             displayMenu(validOperators);
-            input = scanner.next();
+            input = scanner.nextLine();
             determineInput(validOperators, previousInput, input, equation);
             // TODO calculation logic
             // TODO display equation result
@@ -24,12 +27,16 @@ public class CalculatorGui {
         }
     }
 
-    private static void determineInput(ArrayList<String> validOperators, String previousInput, String input, NavigableMap<String, String> equation) {
+    private static void determineInput(ArrayList<String> validOperators, String previousInput, String input,
+                                       ArrayList<Pair<String, String>> equation) {
         buildInput(equation, previousInput, input, validOperators);
-        Map.Entry<String, String> lastEntry = equation.lastEntry();
-        if (lastEntry.getValue().equals("Invalid Input")) {
-            equation.remove(lastEntry.getKey());
+        Pair<String, String> lastEntry = equation.get(equation.size() - 1);
+        if (lastEntry.getRight().equals("Invalid Input")) {
+            equation.remove(equation.size() - 1);
             displayInvalidInput();
+        } else if (lastEntry.getRight().equals("EquationEnd")) {
+            equation.remove(equation.size() - 1);
+            displayResult(equation);
         }
     }
 
@@ -51,7 +58,7 @@ public class CalculatorGui {
         System.out.println("One per line, enter empty input twice to exit program");
     }
 
-    private static void  displayResult() {
-        // TODO display result
+    private static void  displayResult(ArrayList<Pair<String, String>> equation) {
+        System.out.println("Equation result is: %s".formatted(calculate(equation)));
     }
 }

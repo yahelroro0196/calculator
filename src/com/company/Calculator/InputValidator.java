@@ -1,11 +1,10 @@
-package com.company.CalculatorLogic;
+package com.company.Calculator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class InputValidator {
 
-    public static final String EMPTY_INPUT = " ";
+    public static final String EMPTY_INPUT = "";
 
     public static String isValidInput(String previousInput, String input, ArrayList<String> validOperators) {
         if (isOperand(input)) {

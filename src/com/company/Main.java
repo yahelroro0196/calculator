@@ -5,7 +5,7 @@ import com.company.Config.ConfigLoader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.company.CalculatorLogic.CalculatorGui.menu;
+import static com.company.Calculator.CalculatorGui.menu;
 
 public class Main {
 
