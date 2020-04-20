@@ -2,6 +2,8 @@ package com.company.Calculator;
 
 import java.util.ArrayList;
 
+import static com.company.Constants.EQUATION_END;
+
 public class InputValidator {
 
     public static final String EMPTY_INPUT = "";
@@ -11,10 +13,10 @@ public class InputValidator {
             return "Operand";
         } else if (isOperator(input, validOperators)) {
             return "Operator";
+        } else if (isExit(previousInput, input)) {
+            return "Exit";
         } else if (isEndOfEquation(input)) {
             return "EquationEnd";
-        } else if(isExit(previousInput, input)) {
-            return "Exit";
         } else {
             return "InvalidInput";
         }
@@ -41,6 +43,6 @@ public class InputValidator {
     }
 
     private static boolean isExit(String previousInput, String input) {
-        return previousInput.equals(EMPTY_INPUT) && input.equals(EMPTY_INPUT);
+        return previousInput.equals(EQUATION_END) && input.equals(EMPTY_INPUT);
     }
 }

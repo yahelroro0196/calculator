@@ -5,37 +5,49 @@ import com.company.Pair;
 import java.util.*;
 
 import static com.company.Calculator.CalculatorLogic.*;
-import static com.company.Constants.EQUATION_END;
-import static com.company.Constants.INVALID_INPUT;
+import static com.company.Constants.*;
 
 public class CalculatorGui {
 
-    public static final String PLACE_HOLDER_INPUT = "0";
-    public static final String NEW_LINE = "\n";
+    private static final String NEW_LINE = "\n";
 
     public static void menu(ArrayList<String> validOperators) {
         ArrayList<Pair<String, String>> equation = new ArrayList<>();
-        boolean calculatorLoop = true;
-        String previousInput = PLACE_HOLDER_INPUT;
+        String previousResult = PLACE_HOLDER_INPUT;
         String input;
-        while (calculatorLoop) {
+        while (!isExitCalculator(previousResult)) {
             displayMenu(validOperators);
             input = receiveInput();
-            String inputResult = determineInput(validOperators, previousInput, input, equation);
-            equation = determineInputResult(equation, inputResult);
+            String inputResult = determineInput(validOperators, previousResult, input, equation);
+            equation = determineInputResult(equation, previousResult, inputResult);
+            previousResult = inputResult;
         }
     }
 
     private static ArrayList<Pair<String, String>> determineInputResult(ArrayList<Pair<String, String>> equation,
-                                                                        String result) {
+                                                                        String previousResult, String result) {
         switch (result) {
             case INVALID_INPUT:
                 displayInvalidInput();
+                break;
             case EQUATION_END:
-                displayResult(equation);
-                equation = resetEquation(equation);
+                equation = equationEndCase(equation, previousResult);
+                break;
         }
         return equation;
+    }
+
+    private static ArrayList<Pair<String, String>> equationEndCase(ArrayList<Pair<String, String>> equation,
+                                                                   String previousResult) {
+        if (!equation.isEmpty()) {
+            displayResult(equation);
+            equation = resetEquation(equation);
+        }
+        return equation;
+    }
+
+    private static void displayEmptyEquation() {
+        System.out.println("Empty equation!");
     }
 
     public static void displayInvalidInput() {
@@ -63,9 +75,5 @@ public class CalculatorGui {
         } catch (Exception invalidEquation) {
             System.out.println(invalidEquation);
         }
-    }
-
-    public static ArrayList<Pair<String, String>> resetEquation(ArrayList<Pair<String, String>> equation) {
-        return new ArrayList<>();
     }
 }
