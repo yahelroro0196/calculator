@@ -2,40 +2,27 @@ package com.company;
 
 public class Pair<L, R> {
 
-    private final L left;
-    private final R right;
+    private final L value;
+    private final R type;
 
-    public Pair(L left, R right) {
-        assert left != null;
-        assert right != null;
+    public Pair(L value, R type) {
+        assert value != null;
+        assert type != null;
 
-        this.left = left;
-        this.right = right;
+        this.value = value;
+        this.type = type;
     }
 
-    public L getLeft() {
-        return left;
+    public L getValue() {
+        return value;
     }
 
-    public R getRight() {
-        return right;
-    }
-
-    @Override
-    public int hashCode() {
-        return left.hashCode() ^ right.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Pair)) return false;
-        Pair pairObject = (Pair) o;
-        return this.left.equals(pairObject.getLeft()) &&
-                this.right.equals(pairObject.getRight());
+    public R getType() {
+        return type;
     }
 
     @Override
     public String toString() {
-        return "<%s, %s>".formatted(this.left, this.right);
+        return "<%s, %s>".formatted(this.value, this.type);
     }
 }

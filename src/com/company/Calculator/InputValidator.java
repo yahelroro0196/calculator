@@ -16,7 +16,7 @@ public class InputValidator {
         } else if(isExit(previousInput, input)) {
             return "Exit";
         } else {
-            return "Invalid input!";
+            return "InvalidInput";
         }
     }
 
