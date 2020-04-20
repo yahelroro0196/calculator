@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static com.company.Calculator.CalculationSteps.PostfixToResult.postfixToResult;
-import static com.company.Calculator.InputBuilder.buildInput;
+import static com.company.Calculator.InputFlow.InputBuilder.buildInput;
 import static com.company.Constants.*;
 
 public class CalculatorLogic {

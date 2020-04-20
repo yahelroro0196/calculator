@@ -1,4 +1,4 @@
-package com.company.Calculator;
+package com.company.Calculator.InputFlow;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,6 @@
 package com.company.Calculator;
 
+import com.company.Config.ConfigLoader;
 import com.company.Pair;
 
 import java.util.*;
@@ -9,16 +10,17 @@ import static com.company.Constants.*;
 
 public class CalculatorGui {
 
+    public static final String CONFIG_PATH = "src\\com\\company\\config\\ValidOperators.properties";
     private static final String NEW_LINE = "\n";
+    private static final ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
 
-    public static void menu(ArrayList<String> validOperators) {
+    public static void menu() {
         ArrayList<Pair<String, String>> equation = new ArrayList<>();
         String previousResult = PLACE_HOLDER_INPUT;
-        String input;
+        displayMenu();
         while (!isExitCalculator(previousResult)) {
-            displayMenu(validOperators);
-            input = receiveInput();
-            String inputResult = determineInput(validOperators, previousResult, input, equation);
+            String input = receiveInput();
+            String inputResult = determineInput(VALID_OPERATORS, previousResult, input, equation);
             equation = determineInputResult(equation, previousResult, inputResult);
             previousResult = inputResult;
         }
@@ -42,26 +44,23 @@ public class CalculatorGui {
         if (!equation.isEmpty()) {
             displayResult(equation);
             equation = resetEquation(equation);
+            displayMenu();
         }
         return equation;
-    }
-
-    private static void displayEmptyEquation() {
-        System.out.println("Empty equation!");
     }
 
     public static void displayInvalidInput() {
         System.out.println("Invalid Input! Enter an input again.");
     }
 
-    public static void displayMenu(ArrayList<String> validOperators) {
+    public static void displayMenu() {
         System.out.println("Welcome to the calculator!");
         displayInputStructure();
-        displayValidOperators(validOperators);
+        displayValidOperators();
     }
 
-    private static void displayValidOperators(ArrayList<String> validOperators) {
-        System.out.printf("The valid operators you can use are:  %s" + NEW_LINE, validOperators);
+    private static void displayValidOperators() {
+        System.out.printf("The valid operators you can use are:  %s" + NEW_LINE, VALID_OPERATORS);
     }
 
     private static void displayInputStructure() {

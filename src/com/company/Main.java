@@ -9,12 +9,9 @@ import static com.company.Calculator.CalculatorGui.menu;
 
 public class Main {
 
-    public static final String VALID_OPERATORS = "validOperators";
-    public static final String CONFIG_PATH = "src\\com\\company\\config\\ValidOperators.properties";
 
-    public static void main(String[] args) throws IOException {
-        ArrayList<String> validOperators = ConfigLoader.loadConfig(CONFIG_PATH);
-        menu(validOperators);
+    public static void main(String[] args) {
+        menu();
     }
 
 }

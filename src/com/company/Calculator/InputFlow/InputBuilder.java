@@ -1,11 +1,10 @@
-package com.company.Calculator;
+package com.company.Calculator.InputFlow;
 
 import com.company.Pair;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-import static com.company.Calculator.InputValidator.isValidInput;
+import static com.company.Calculator.InputFlow.InputValidator.isValidInput;
 
 public class InputBuilder {
     public static void buildInput(ArrayList<Pair<String, String>> equation, String previousInput,
