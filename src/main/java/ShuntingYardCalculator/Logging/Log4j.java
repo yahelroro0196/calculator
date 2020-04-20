@@ -4,8 +4,6 @@ import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
-import static ShuntingYardCalculator.Constants.NEW_LINE;
-
 public class Log4j {
 
     static Logger logger = Logger.getLogger(Log4j.class.getName());

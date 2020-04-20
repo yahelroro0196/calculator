@@ -28,3 +28,4 @@ calculator.iml
 .target/
 .out/
 .java/
+/target/classes/META-INF/calculator.kotlin_module
