@@ -10,7 +10,8 @@ import java.util.InputMismatchException;
 import java.util.Stack;
 
 public class PostfixToResult {
-    public static double postfixToResult(ArrayList<Pair<String, Type>> equation) throws InputMismatchException {
+    public static double postfixToResult(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
+            ArithmeticException {
         Stack<Pair<String, Type>> operandStack = new Stack<>();
         double result;
         for (Pair<String, Type> currPair : equation) {
@@ -27,7 +28,7 @@ public class PostfixToResult {
     }
 
     private static void calculateNumberPairs(Stack<Pair<String, Type>> operandStack,
-                                             Pair<String, Type> currPair) {
+                                             Pair<String, Type> currPair) throws ArithmeticException {
         double rightOperand = Double.parseDouble(operandStack.pop().getValue());
         double leftOperand = Double.parseDouble(operandStack.pop().getValue());
         String operatorText = currPair.getValue();

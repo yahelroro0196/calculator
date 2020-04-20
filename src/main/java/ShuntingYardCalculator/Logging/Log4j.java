@@ -38,4 +38,8 @@ public class Log4j {
     public static void displayConfigError() {
         logger.error("Error loading config!");
     }
+
+    public static void displayZeroDivision() {
+        logger.error("Can't divide by Zero");
+    }
 }

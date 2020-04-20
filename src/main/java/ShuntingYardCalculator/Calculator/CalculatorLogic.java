@@ -11,7 +11,8 @@ import static ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult
 import static ShuntingYardCalculator.Calculator.InputFlow.InputBuilder.buildInput;
 
 public class CalculatorLogic {
-    public static double calculate(ArrayList<Pair<String, Type>> equation) throws InputMismatchException {
+    public static double calculate(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
+            ArithmeticException {
         ArrayList<Pair<String, Type>> postfixEquation = InfixToPostfix.infixToPostfix(equation);
         return postfixToResult(postfixEquation);
     }

@@ -48,6 +48,8 @@ public class CalculatorGui {
                 Log4j.displayResult(result);
             } catch (InputMismatchException exception) {
                 Log4j.displayInvalidEquation();
+            } catch (ArithmeticException exception) {
+                Log4j.displayZeroDivision();
             }
             equation = CalculatorLogic.resetEquation();
             Log4j.displayMenu(VALID_OPERATORS);
