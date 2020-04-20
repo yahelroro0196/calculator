@@ -13,6 +13,10 @@ public class OperatorFactory {
                 return new Divide();
             case "^":
                 return new Power();
+            case "(":
+                return new LeftBracket();
+            case ")":
+                return new RightBracket();
             default:
                 return null;
         }
