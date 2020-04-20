@@ -1,0 +1,17 @@
+2020-04-20 20:07:04 INFO  Log4j:14 - Welcome to the calculator!
+2020-04-20 20:07:04 INFO  Log4j:24 - Type an operator/operand and hit enter.
+2020-04-20 20:07:04 INFO  Log4j:25 - One per line, enter empty input twice to exit program
+2020-04-20 20:07:04 INFO  Log4j:20 - The valid operators you can use are:  [+, -]
+2020-04-20 20:08:05 INFO  Log4j:14 - Welcome to the calculator!
+2020-04-20 20:08:05 INFO  Log4j:24 - Type an operator/operand and hit enter.
+2020-04-20 20:08:05 INFO  Log4j:25 - One per line, enter empty input twice to exit program
+2020-04-20 20:08:05 INFO  Log4j:20 - The valid operators you can use are:  [+, -]
+2020-04-20 20:09:11 INFO  Log4j:14 - Welcome to the calculator!
+2020-04-20 20:09:11 INFO  Log4j:24 - Type an operator/operand and hit enter.
+2020-04-20 20:09:11 INFO  Log4j:25 - One per line, enter empty input twice to exit program
+2020-04-20 20:09:11 INFO  Log4j:20 - The valid operators you can use are:  [+, -]
+2020-04-20 20:09:14 INFO  Log4j:29 - Equation result is: 10.0
+2020-04-20 20:09:14 INFO  Log4j:14 - Welcome to the calculator!
+2020-04-20 20:09:14 INFO  Log4j:24 - Type an operator/operand and hit enter.
+2020-04-20 20:09:14 INFO  Log4j:25 - One per line, enter empty input twice to exit program
+2020-04-20 20:09:14 INFO  Log4j:20 - The valid operators you can use are:  [+, -]
