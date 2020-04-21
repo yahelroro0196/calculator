@@ -1,7 +1,7 @@
 package ShuntingYardCalculator.Calculator.InputFlow;
 
-import ShuntingYardCalculator.Pair;
 import ShuntingYardCalculator.Type;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 

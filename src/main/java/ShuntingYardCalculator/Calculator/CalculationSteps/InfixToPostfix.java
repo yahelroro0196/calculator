@@ -2,9 +2,8 @@ package ShuntingYardCalculator.Calculator.CalculationSteps;
 
 import ShuntingYardCalculator.Calculator.Operators.Operator;
 import ShuntingYardCalculator.Calculator.Operators.OperatorFactory;
-import ShuntingYardCalculator.Calculator.Operators.RightBracket;
-import ShuntingYardCalculator.Pair;
 import ShuntingYardCalculator.Type;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -17,11 +16,11 @@ public class InfixToPostfix {
         ArrayList<Pair<String, Type>> postfixEquation = new ArrayList<>();
         Stack<Pair<String, Type>> operatorStack = new Stack<>();
         for (Pair<String, Type> currPair : equation) {
-            if (currPair.getValue().equals(L_BRACKET)) {
+            if (currPair.getKey().equals(L_BRACKET)) {
                 operatorStack.push(currPair);
-            } else if (currPair.getValue().equals(R_BRACKET)) {
+            } else if (currPair.getKey().equals(R_BRACKET)) {
                 insertBracketsPart(postfixEquation, operatorStack);
-            } else if (currPair.getType().equals(Type.OPERATOR)) {
+            } else if (currPair.getValue().equals(Type.OPERATOR)) {
                 insertOperatorByPrecedence(postfixEquation, operatorStack, currPair);
             } else {
                 postfixEquation.add(currPair);
@@ -37,8 +36,8 @@ public class InfixToPostfix {
         if (operatorStack.isEmpty()) {
             operatorStack.push(currPair);
         } else {
-            while (!operatorStack.isEmpty() && isHigherPrecedence(currPair.getValue(),
-                    operatorStack.peek().getValue())) {
+            while (!operatorStack.isEmpty() && isHigherPrecedence(currPair.getKey(),
+                    operatorStack.peek().getKey())) {
                 postfixEquation.add(operatorStack.pop());
             }
             operatorStack.push(currPair);
@@ -54,8 +53,8 @@ public class InfixToPostfix {
 
     private static void insertBracketsPart(ArrayList<Pair<String, Type>> postfixEquation,
                                            Stack<Pair<String, Type>> operatorStack) {
-        while (!operatorStack.peek().getValue().equals(L_BRACKET)) {
-            if (!operatorStack.peek().getValue().equals(R_BRACKET)) {
+        while (!operatorStack.peek().getKey().equals(L_BRACKET)) {
+            if (!operatorStack.peek().getKey().equals(R_BRACKET)) {
                 postfixEquation.add(operatorStack.pop());
             }
         }

@@ -3,7 +3,7 @@ package ShuntingYardCalculator.Calculator.CalculationSteps;
 import ShuntingYardCalculator.Calculator.Operators.Operator;
 import ShuntingYardCalculator.Calculator.Operators.OperatorFactory;
 import ShuntingYardCalculator.Type;
-import ShuntingYardCalculator.Pair;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -15,23 +15,23 @@ public class PostfixToResult {
         Stack<Pair<String, Type>> operandStack = new Stack<>();
         double result;
         for (Pair<String, Type> currPair : equation) {
-            if (currPair.getType().equals(Type.OPERAND)) {
+            if (currPair.getValue().equals(Type.OPERAND)) {
                 operandStack.push(currPair);
-            } else if (currPair.getType().equals(Type.OPERATOR) && operandStack.isEmpty()) {
+            } else if (currPair.getValue().equals(Type.OPERATOR) && operandStack.isEmpty()) {
                 throw new InputMismatchException("Invalid equation, reenter the equation!");
             } else {
                 PostfixToResult.calculateNumberPairs(operandStack, currPair);
             }
         }
-        result = Double.parseDouble(operandStack.pop().getValue());
+        result = Double.parseDouble(operandStack.pop().getKey());
         return result;
     }
 
     private static void calculateNumberPairs(Stack<Pair<String, Type>> operandStack,
                                              Pair<String, Type> currPair) throws ArithmeticException {
-        double rightOperand = Double.parseDouble(operandStack.pop().getValue());
-        double leftOperand = Double.parseDouble(operandStack.pop().getValue());
-        String operatorText = currPair.getValue();
+        double rightOperand = Double.parseDouble(operandStack.pop().getKey());
+        double leftOperand = Double.parseDouble(operandStack.pop().getKey());
+        String operatorText = currPair.getKey();
         Operator operator = new OperatorFactory().factory(operatorText);
         double calculationResult = operator.calculateOperator(leftOperand, rightOperand);
         Pair<String, Type> calculationPair = new Pair<>(String.valueOf(calculationResult), Type.OPERAND);

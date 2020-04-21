@@ -4,9 +4,9 @@ import ShuntingYardCalculator.Type;
 
 import java.util.ArrayList;
 
-import static ShuntingYardCalculator.Constants.*;
-
 public class InputValidator {
+
+    private final static String EMPTY_INPUT = "";
 
     public static Type isValidInput(String previousInput, String input, ArrayList<String> validOperators) {
         if (isOperand(input)) {

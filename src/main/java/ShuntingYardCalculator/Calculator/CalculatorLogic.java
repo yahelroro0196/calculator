@@ -1,8 +1,8 @@
 package ShuntingYardCalculator.Calculator;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.InfixToPostfix;
-import ShuntingYardCalculator.Pair;
 import ShuntingYardCalculator.Type;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -21,7 +21,7 @@ public class CalculatorLogic {
                                       ArrayList<Pair<String, Type>> equation) {
         buildInput(equation, previousInput, input, validOperators);
         Pair<String, Type> lastEntry = equation.get(equation.size() - 1);
-        switch (lastEntry.getType()) {
+        switch (lastEntry.getValue()) {
             case INVALID_INPUT:
                 equation.remove(equation.size() - 1);
                 return Type.INVALID_INPUT;

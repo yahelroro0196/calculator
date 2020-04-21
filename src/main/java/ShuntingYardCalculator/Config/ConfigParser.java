@@ -6,9 +6,11 @@ import java.util.Arrays;
 public class ConfigParser extends ConfigLoader {
 
     public static final String OPERATOR_DELIMITER = ",";
+    public static final int VALID_OPERATORS_INDEX = 16;
 
     protected static ArrayList<String> parseValidOperatorsString(String validOperatorsText) {
-        String[] validOperatorsArray = validOperatorsText.split(OPERATOR_DELIMITER);
+        String validOperatorsOnlyText = validOperatorsText.substring(VALID_OPERATORS_INDEX);
+        String[] validOperatorsArray = validOperatorsOnlyText.split(OPERATOR_DELIMITER);
         return new ArrayList<>(Arrays.asList(validOperatorsArray));
     }
 }

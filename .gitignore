@@ -28,4 +28,5 @@ calculator.iml
 /target/
 /out/
 /target/classes/META-INF/calculator.kotlin_module
-/src/main/java/META-INF
+/src/main/java/META-INF/
+/src/main/resources/META-INF
