@@ -15,6 +15,7 @@ public class CalculationsTester {
     public static final int postfixToResultOutput = 65;
     private ArrayList<Pair<String, Type>> infixToPostfixInput;
     private ArrayList<Pair<String, Type>> infixToPostfixOutput;
+
     @Before
     public void prepareTests() {
         infixToPostfixOutput = new ArrayList<>();
@@ -30,6 +31,7 @@ public class CalculationsTester {
         infixToPostfixInput.add(new Pair<>("+", Type.OPERATOR));
         infixToPostfixInput.add(new Pair<>("55", Type.OPERAND));
     }
+
     @Test
     public void infixToPostfixTester() {
         assertEquals(infixToPostfixOutput, InfixToPostfix.infixToPostfix(infixToPostfixInput));
@@ -37,7 +39,7 @@ public class CalculationsTester {
 
     @Test
     public void postfixToResultTester() {
-        assertEquals(postfixToResultOutput, PostfixToResult.postfixToResult(infixToPostfixOutput),0.01);
+        assertEquals(postfixToResultOutput, PostfixToResult.postfixToResult(infixToPostfixOutput), 0.01);
     }
 
     @After
