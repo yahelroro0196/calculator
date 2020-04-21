@@ -10,8 +10,6 @@ import EdgeCases.InfixToPostfixCases;
 
 public class CalculationsTester {
 
-    public static final int postfixToResultOutput = 65;
-
     @Before
     public void programWideTestsPreparation() {
         InfixToPostfixCases.inputSetup();
