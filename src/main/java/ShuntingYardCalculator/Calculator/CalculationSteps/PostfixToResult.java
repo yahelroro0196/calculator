@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Stack;
 
+import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
+
 public class PostfixToResult {
     public static double postfixToResult(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
             ArithmeticException {
@@ -18,7 +20,7 @@ public class PostfixToResult {
             if (currPair.getValue().equals(Type.OPERAND)) {
                 operandStack.push(currPair);
             } else if (currPair.getValue().equals(Type.OPERATOR) && operandStack.isEmpty()) {
-                throw new InputMismatchException("Invalid equation, reenter the equation!");
+                throw new InputMismatchException(INVALID_EQUATION_ERROR);
             } else {
                 PostfixToResult.calculateNumberPairs(operandStack, currPair);
             }

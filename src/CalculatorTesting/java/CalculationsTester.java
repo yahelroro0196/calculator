@@ -1,12 +1,7 @@
-import ShuntingYardCalculator.Calculator.CalculationSteps.InfixToPostfix;
-import ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult;
+import EdgeCases.InfixToPostfixCases;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-
-import static org.junit.Assert.assertEquals;
-import EdgeCases.InfixToPostfixCases;
 
 public class CalculationsTester {
 

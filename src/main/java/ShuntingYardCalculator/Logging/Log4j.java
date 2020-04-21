@@ -18,7 +18,11 @@ public class Log4j {
         logger.error("Error loading config!");
     }
 
-    public static void displayZeroDivision() {
+    public static void displayZeroDivisionError() {
         logger.error("Can't divide by Zero");
+    }
+
+    public static void displayEmptyBracketsError() {
+        logger.error("Empty brackets found in equation! reenter the equation!");
     }
 }
