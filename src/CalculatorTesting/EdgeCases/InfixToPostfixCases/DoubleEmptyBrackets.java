@@ -14,9 +14,8 @@ public class DoubleEmptyBrackets {
     private static Class<ArithmeticException> doubleEmptyBracketsOutput;
 
     public static void test() {
-        Exception exception = assertThrows(doubleEmptyBracketsOutput, () -> {
-            InfixToPostfix.infixToPostfix(doubleEmptyBracketsInput);
-        });
+        Exception exception = assertThrows(doubleEmptyBracketsOutput, () ->
+                InfixToPostfix.infixToPostfix(doubleEmptyBracketsInput));
     }
 
     public static void setup() {
