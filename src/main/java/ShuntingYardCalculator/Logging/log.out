@@ -222,3 +222,16 @@
 2020-04-20 22:48:07 INFO  Log4j:22 - Type an operator/operand and hit enter.
 2020-04-20 22:48:07 INFO  Log4j:23 - One per line, enter empty input twice to exit program
 2020-04-20 22:48:07 INFO  Log4j:18 - The valid operators you can use are:  [+, -, /, *, (, )]
+2020-04-21 09:41:55 INFO  Log4j:12 - Welcome to the calculator!
+2020-04-21 09:41:55 INFO  Log4j:22 - Type an operator/operand and hit enter.
+2020-04-21 09:41:55 INFO  Log4j:23 - One per line, enter empty input twice to exit program
+2020-04-21 09:41:55 INFO  Log4j:18 - The valid operators you can use are:  [+, -, /, *, (, )]
+2020-04-21 09:42:28 INFO  Log4j:12 - Welcome to the calculator!
+2020-04-21 09:42:28 INFO  Log4j:22 - Type an operator/operand and hit enter.
+2020-04-21 09:42:28 INFO  Log4j:23 - One per line, enter empty input twice to exit program
+2020-04-21 09:42:28 INFO  Log4j:18 - The valid operators you can use are:  [+, -]
+2020-04-21 09:42:36 INFO  Log4j:27 - Equation result is: 5.0
+2020-04-21 09:42:36 INFO  Log4j:12 - Welcome to the calculator!
+2020-04-21 09:42:36 INFO  Log4j:22 - Type an operator/operand and hit enter.
+2020-04-21 09:42:36 INFO  Log4j:23 - One per line, enter empty input twice to exit program
+2020-04-21 09:42:36 INFO  Log4j:18 - The valid operators you can use are:  [+, -]
