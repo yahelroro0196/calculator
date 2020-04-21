@@ -2,3 +2,6 @@
 2020-04-21 18:21:57 ERROR Log4j:22 - Can't divide by Zero
 2020-04-21 18:23:15 ERROR Log4j:22 - Can't divide by Zero
 2020-04-21 18:23:44 ERROR Log4j:22 - Can't divide by Zero
+2020-04-21 18:40:53 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-21 18:41:05 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-21 18:45:59 ERROR Log4j:30 - Invalid brackets form found in equation! reenter the equation!

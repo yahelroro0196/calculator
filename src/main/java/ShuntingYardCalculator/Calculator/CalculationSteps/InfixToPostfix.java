@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import static ShuntingYardCalculator.ExceptionType.EMPTY_BRACKETS_ERROR;
+import static ShuntingYardCalculator.ExceptionType.INVALID_BRACKETS_ERROR;
 
 public class InfixToPostfix {
     public static final String L_BRACKET = "(";
@@ -57,15 +58,22 @@ public class InfixToPostfix {
 
     private static void insertBracketsPart(ArrayList<Pair<String, Type>> postfixEquation,
                                            Stack<Pair<String, Type>> operatorStack) throws ArithmeticException {
-        boolean inserted = false;
+        boolean insertedBracketsContents = false;
+        checkIfOnlyRightBracket(operatorStack);
         while (!operatorStack.peek().getKey().equals(L_BRACKET)) {
             if (!operatorStack.peek().getKey().equals(R_BRACKET)) {
                 postfixEquation.add(operatorStack.pop());
-                inserted = true;
+                insertedBracketsContents = true;
             }
         }
-        checkIfEmptyBrackets(inserted);
+        checkIfEmptyBrackets(insertedBracketsContents);
         operatorStack.pop();
+    }
+
+    private static void checkIfOnlyRightBracket(Stack<Pair<String, Type>> operatorStack) {
+        if (operatorStack.isEmpty()) {
+            throw new ArithmeticException(INVALID_BRACKETS_ERROR);
+        }
     }
 
     private static void checkIfEmptyBrackets(boolean inserted) {

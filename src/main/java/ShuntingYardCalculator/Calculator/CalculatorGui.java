@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static ShuntingYardCalculator.ExceptionType.EMPTY_BRACKETS_ERROR;
-import static ShuntingYardCalculator.ExceptionType.ZERO_DIVISION_ERROR;
+import static ShuntingYardCalculator.ExceptionType.*;
 
 
 public class CalculatorGui {
@@ -65,7 +64,9 @@ public class CalculatorGui {
             case ZERO_DIVISION_ERROR:
                 Log4j.displayZeroDivisionError();
             case EMPTY_BRACKETS_ERROR:
-                Log4j.displayZeroDivisionError();
+                Log4j.displayEmptyBracketsError();
+            case INVALID_BRACKETS_ERROR:
+                Log4j.displayInvalidBracketsError();
         }
     }
 

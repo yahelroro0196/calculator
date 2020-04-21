@@ -25,4 +25,8 @@ public class Log4j {
     public static void displayEmptyBracketsError() {
         logger.error("Empty brackets found in equation! reenter the equation!");
     }
+
+    public static void displayInvalidBracketsError() {
+        logger.error("Invalid brackets form found in equation! reenter the equation!");
+    }
 }
