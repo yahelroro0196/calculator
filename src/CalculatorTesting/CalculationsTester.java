@@ -1,4 +1,6 @@
-import EdgeCases.InfixToPostfixCases;
+package CalculatorTesting;
+
+import CalculatorTesting.EdgeCases.InfixToPostfixTests;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,17 +9,16 @@ public class CalculationsTester {
 
     @Before
     public void programWideTestsPreparation() {
-        InfixToPostfixCases.inputSetup();
-        InfixToPostfixCases.outputSetup();
+        InfixToPostfixTests.initialize_tests();
     }
 
     @Test
     public void programWideTests() {
-        InfixToPostfixCases.doubleBrackets();
+        InfixToPostfixTests.do_tests();
     }
 
     @After
     public void finalize_test() {
-        InfixToPostfixCases.finalize_tests();
+        InfixToPostfixTests.finalize_tests();
     }
 }

@@ -2,7 +2,6 @@ package ShuntingYardCalculator.Calculator.CalculationSteps;
 
 import ShuntingYardCalculator.Calculator.Operators.Operator;
 import ShuntingYardCalculator.Calculator.Operators.OperatorFactory;
-import ShuntingYardCalculator.ExceptionType;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
 
