@@ -63,10 +63,13 @@ public class CalculatorGui {
         switch (exception.getMessage()) {
             case ZERO_DIVISION_ERROR:
                 Log4j.displayZeroDivisionError();
+                break;
             case EMPTY_BRACKETS_ERROR:
                 Log4j.displayEmptyBracketsError();
+                break;
             case INVALID_BRACKETS_ERROR:
                 Log4j.displayInvalidBracketsError();
+                break;
         }
     }
 
