@@ -1,7 +1,5 @@
 package CalculatorTesting.TestTypes.IsValidInputCases;
 
-import ShuntingYardCalculator.Config.ConfigLoader;
-import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
 import org.junit.After;
@@ -18,13 +16,11 @@ import static org.junit.Assert.assertEquals;
 public class Operand {
     public static String OPERAND_INPUT;
     private static ArrayList<Pair<String, Type>> OPERAND_EQUATION;
-    private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
-            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
     private static Type OPERAND_OUTPUT;
 
     @Test
     public void test() {
-        assertEquals(OPERAND_OUTPUT, isValidInput(OPERAND_INPUT, VALID_OPERATORS));
+        assertEquals(OPERAND_OUTPUT, isValidInput(OPERAND_INPUT, VALID_OPERATORS, VALID_FUNCTIONS));
     }
 
     @Before
@@ -39,7 +35,7 @@ public class Operand {
 
     private void inputSetup() {
         OPERAND_EQUATION = new ArrayList<>();
-        OPERAND_EQUATION = parseEquationString("5 + 5");
+        OPERAND_EQUATION = parseEquationString("5+5");
         OPERAND_INPUT = PLACE_HOLDER_OPERAND;
     }
 

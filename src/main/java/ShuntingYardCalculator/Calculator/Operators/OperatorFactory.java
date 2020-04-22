@@ -17,10 +17,6 @@ public class OperatorFactory {
                 return new LeftBracket();
             case ")":
                 return new RightBracket();
-            case "%":
-                return new Cosines();
-            case "$":
-                return new Sinus();
             default:
                 return null;
         }

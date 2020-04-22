@@ -1,7 +1,5 @@
 package ShuntingYardCalculator.Calculator;
 
-import ShuntingYardCalculator.Config.ConfigLoader;
-import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Logging.Log4j;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
@@ -15,13 +13,10 @@ import static ShuntingYardCalculator.ExceptionType.*;
 
 
 public class CalculatorGui {
-    private static final ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
-            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
-
     public static void menu() {
         ArrayList<Pair<String, Type>> equation;
         String inputEquation = SPACE;
-        displayMenu(VALID_OPERATORS);
+        displayMenu();
         while (inputEquation.length() != 0) {
             inputEquation = receiveInput();
             if (!inputEquation.equals(EMPTY)) {
@@ -46,7 +41,7 @@ public class CalculatorGui {
                 arithmeticExceptionType(exception);
             }
             equation = CalculatorLogic.resetEquation();
-            displayMenu(VALID_OPERATORS);
+            displayMenu();
         }
         return equation;
     }
@@ -71,15 +66,20 @@ public class CalculatorGui {
         return scanner.nextLine();
     }
 
-    public static void displayMenu(ArrayList<String> VALID_OPERATORS) {
+    public static void displayMenu() {
         System.out.println("Welcome to the calculator!");
         displayInputStructure();
-        displayValidOperators(VALID_OPERATORS);
+        displayValidOperators();
+        displayValidFunctions();
         displayExampleEquations();
     }
 
-    public static void displayValidOperators(ArrayList<String> VALID_OPERATORS) {
+    public static void displayValidOperators() {
         System.out.println("The valid operators you can use are: " + VALID_OPERATORS);
+    }
+
+    public static void displayValidFunctions() {
+        System.out.println("The valid operators you can use are: " + VALID_FUNCTIONS);
     }
 
     public static void displayInputStructure() {
@@ -93,8 +93,8 @@ public class CalculatorGui {
 
     public static void displayExampleEquations() {
         System.out.println("Example equations:");
-        System.out.println("5 ^ 8 / ( 5 * 1 ) + 10");
-        System.out.println("% 5 $ 8");
-        System.out.println("% 5 * 5 * ( 10 + 2 )");
+        System.out.println("5^8/(5*1)+10");
+        System.out.println("%5*$8");
+        System.out.println("%5*5*(10+2)");
     }
 }

@@ -34,7 +34,7 @@ public class ComplexEquation {
 
     private void inputSetup() {
         COMPLEX_EQUATION_INPUT = new ArrayList<>();
-        COMPLEX_EQUATION_INPUT = parseEquationString("% 5 * 5 ^ ( 10 + 2 )");
+        COMPLEX_EQUATION_INPUT = parseEquationString("%5*5^(10+2)");
     }
 
     @After

@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
 import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
@@ -29,12 +30,12 @@ public class DoubleBrackets {
 
     private void outputSetup() {
         DOUBLE_BRACKETS_OUTPUT = new ArrayList<>();
-        DOUBLE_BRACKETS_OUTPUT = parseEquationString("5 5 5 + 5 * +");
+        DOUBLE_BRACKETS_OUTPUT = parse("5 5 5 + 5 * +");
     }
 
     private void inputSetup() {
         DOUBLE_BRACKETS_INPUT = new ArrayList<>();
-        DOUBLE_BRACKETS_INPUT = parseEquationString("5 + ( ( 5 + 5 ) * 5 )");
+        DOUBLE_BRACKETS_INPUT = parseEquationString("5+((5+5)*5)");
     }
 
     @After

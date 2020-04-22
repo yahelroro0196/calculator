@@ -34,7 +34,7 @@ public class DoubleEmptyBrackets {
 
     private void inputSetup() {
         DOUBLE_EMPTY_BRACKETS_INPUT = new ArrayList<>();
-        DOUBLE_EMPTY_BRACKETS_INPUT = parseEquationString("( )");
+        DOUBLE_EMPTY_BRACKETS_INPUT = parseEquationString("()");
     }
 
     @After
