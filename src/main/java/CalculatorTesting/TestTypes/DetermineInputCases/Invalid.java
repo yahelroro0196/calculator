@@ -11,12 +11,13 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Config.Config.CONFIG_PATH;
+import static ShuntingYardCalculator.Config.Config.PLACE_HOLDER;
 import static org.junit.Assert.assertEquals;
 
 public class Invalid {
-    public static final String INVALID_INPUT = "~";
-    private static final String INVALID_PREVIOUS_INPUT = "_";
-    private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
+    public static String INVALID_INPUT;
+    private static String INVALID_PREVIOUS_INPUT;
     private static ArrayList<Pair<String, Type>> INVALID_EQUATION;
     private static ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
     private static Type INVALID_OUTPUT;
@@ -40,10 +41,12 @@ public class Invalid {
     private void inputSetup() {
         INVALID_EQUATION = new ArrayList<>();
         INVALID_EQUATION = parseEquationString("5 + 5");
+        INVALID_INPUT = PLACE_HOLDER;
+        INVALID_PREVIOUS_INPUT = PLACE_HOLDER;
     }
 
     @After
-    public void finalize_tests() {
+    public void finalizeTests() {
         INVALID_EQUATION.clear();
         INVALID_OUTPUT = null;
     }

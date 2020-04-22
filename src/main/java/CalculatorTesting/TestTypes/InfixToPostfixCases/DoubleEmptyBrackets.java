@@ -38,7 +38,7 @@ public class DoubleEmptyBrackets {
     }
 
     @After
-    public void finalize_tests() {
+    public void finalizeTests() {
         DOUBLE_EMPTY_BRACKETS_INPUT.clear();
         DOUBLE_EMPTY_BRACKETS_OUTPUT = null;
     }

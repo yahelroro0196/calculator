@@ -38,7 +38,7 @@ public class DoubleBrackets {
     }
 
     @After
-    public void finalize_tests() {
+    public void finalizeTests() {
         DOUBLE_BRACKETS_INPUT.clear();
         DOUBLE_BRACKETS_OUTPUT.clear();
     }

@@ -11,20 +11,21 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Config.Config.CONFIG_PATH;
+import static ShuntingYardCalculator.Config.Config.PLACE_HOLDER_OPERAND;
 import static org.junit.Assert.assertEquals;
 
 public class Valid {
-    public static final String VALID_INPUT = "5";
-    private static final String VALID_PREVIOUS_INPUT = "6";
-    private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
-    private static ArrayList<Pair<String, Type>> validEquation;
-    private static ArrayList<String> validOperators = ConfigLoader.loadConfig(CONFIG_PATH);
-    private static Type validOutput;
+    public static String VALID_INPUT;
+    private static String VALID_PREVIOUS_INPUT;
+    private static ArrayList<Pair<String, Type>> VALID_EQUATION;
+    private static ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
+    private static Type VALID_OUTPUT;
 
     @Test
     public void test() {
-        assertEquals(validOutput, CalculatorLogic.determineInput(validOperators, VALID_PREVIOUS_INPUT,
-                VALID_INPUT, validEquation));
+        assertEquals(VALID_OUTPUT, CalculatorLogic.determineInput(VALID_OPERATORS, VALID_PREVIOUS_INPUT,
+                VALID_INPUT, VALID_EQUATION));
     }
 
     @Before
@@ -34,17 +35,19 @@ public class Valid {
     }
 
     private void outputSetup() {
-        validOutput = Type.VALID_INPUT;
+        VALID_OUTPUT = Type.VALID_INPUT;
     }
 
     private void inputSetup() {
-        validEquation = new ArrayList<>();
-        validEquation = parseEquationString("5 + 5");
+        VALID_EQUATION = new ArrayList<>();
+        VALID_EQUATION = parseEquationString("5 + 5");
+        VALID_INPUT = PLACE_HOLDER_OPERAND;
+        VALID_PREVIOUS_INPUT = PLACE_HOLDER_OPERAND;
     }
 
     @After
-    public void finalize_tests() {
-        validEquation.clear();
-        validOutput = null;
+    public void finalizeTests() {
+        VALID_EQUATION.clear();
+        VALID_OUTPUT = null;
     }
 }

@@ -38,7 +38,7 @@ public class ComplexEquation {
     }
 
     @After
-    public void finalize_tests() {
+    public void finalizeTests() {
         COMPLEX_EQUATION_INPUT.clear();
         COMPLEX_EQUATION_OUTPUT = null;
     }

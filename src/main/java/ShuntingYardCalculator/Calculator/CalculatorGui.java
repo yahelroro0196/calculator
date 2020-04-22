@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static ShuntingYardCalculator.Config.Config.CONFIG_PATH;
 import static ShuntingYardCalculator.ExceptionType.*;
 
 
 public class CalculatorGui {
 
     public static final String PLACE_HOLDER = "_";
-    private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
     private static final ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
 
     public static void menu() {

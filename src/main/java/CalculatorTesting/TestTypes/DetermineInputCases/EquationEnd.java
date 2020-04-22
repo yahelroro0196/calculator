@@ -11,12 +11,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Config.Config.*;
 import static org.junit.Assert.assertEquals;
 
 public class EquationEnd {
-    public static final String EQUATION_END_INPUT = "";
-    private static final String EQUATION_END_PREVIOUS_INPUT = "_";
-    private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
+    public static String EQUATION_END_INPUT;
+    private static String EQUATION_END_PREVIOUS_INPUT;
     private static ArrayList<Pair<String, Type>> EQUATION_END_EQUATION;
     private static ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
     private static Type EQUATION_END_OUTPUT;
@@ -40,10 +40,12 @@ public class EquationEnd {
     private void inputSetup() {
         EQUATION_END_EQUATION = new ArrayList<>();
         EQUATION_END_EQUATION = parseEquationString("5 + 5");
+        EQUATION_END_PREVIOUS_INPUT = PLACE_HOLDER;
+        EQUATION_END_INPUT = EMPTY;
     }
 
     @After
-    public void finalize_tests() {
+    public void finalizeTests() {
         EQUATION_END_EQUATION.clear();
         EQUATION_END_OUTPUT = null;
     }

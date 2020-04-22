@@ -7,11 +7,9 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValidInput;
+import static ShuntingYardCalculator.Config.Config.*;
 
 public class TestParser {
-    public static final String SPACE = " ";
-    private static final String PLACE_HOLDER = "_";
-    private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
     private static final ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
 
     public static ArrayList<Pair<String, Type>> parseEquationString(String equationText) {

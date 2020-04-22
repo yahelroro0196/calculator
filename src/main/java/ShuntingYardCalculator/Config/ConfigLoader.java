@@ -11,8 +11,6 @@ import java.util.Properties;
 import static ShuntingYardCalculator.Config.ConfigParser.parseValidOperatorsString;
 
 public class ConfigLoader {
-    private static final String VALID_OPERATORS = "Valid_Operators";
-
     public static ArrayList<String> loadConfig(String CONFIG_PATH) {
         Properties prop = new Properties();
         try {
@@ -20,7 +18,7 @@ public class ConfigLoader {
             InputStreamReader configStreamReader = new InputStreamReader(configFile);
 
             String propertiesData = loadStreamData(configFile, configStreamReader);
-            return parseValidOperatorsString(propertiesData);
+            return parseValidOperatorsString(propertiesData); // TODO generic parsing
         } catch (IOException e) {
             Log4j.displayConfigError();
             System.exit(0);
@@ -28,7 +26,8 @@ public class ConfigLoader {
         }
     }
 
-    private static String loadStreamData(FileInputStream configFile, InputStreamReader configStreamReader) throws IOException {
+    private static String loadStreamData(FileInputStream configFile, InputStreamReader configStreamReader)
+            throws IOException {
         StringBuilder propertiesData = new StringBuilder();
         int charAsInt;
         while ((charAsInt = configStreamReader.read()) != -1) {
