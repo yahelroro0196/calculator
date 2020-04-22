@@ -5,6 +5,5 @@ public enum Type {
     OPERATOR,
     INVALID_INPUT,
     VALID_INPUT,
-    EQUATION_END,
-    EXIT
+    EQUATION_END
 }

@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValidInput;
 import static ShuntingYardCalculator.Config.Config.*;
 import static org.junit.Assert.assertEquals;
@@ -25,7 +25,7 @@ public class Operator {
 
     @Test
     public void test() {
-        assertEquals(OPERATOR_OUTPUT, isValidInput(OPERATOR_PREVIOUS_INPUT, OPERATOR_INPUT, VALID_OPERATORS));
+        assertEquals(OPERATOR_OUTPUT, isValidInput(OPERATOR_INPUT, VALID_OPERATORS));
     }
 
     @Before

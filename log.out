@@ -6,3 +6,12 @@
 2020-04-21 18:41:05 ERROR Log4j:10 - Invalid equation! reenter the equation
 2020-04-21 18:45:59 ERROR Log4j:30 - Invalid brackets form found in equation! reenter the equation!
 2020-04-22 09:50:17 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-22 12:37:23 WARN  Log4j:14 - Invalid input! reenter the input
+2020-04-22 12:59:57 ERROR Log4j:26 - Empty brackets found in equation! reenter the equation!
+2020-04-22 13:00:19 ERROR Log4j:26 - Empty brackets found in equation! reenter the equation!
+2020-04-22 13:05:30 ERROR Log4j:26 - Empty brackets found in equation! reenter the equation!
+2020-04-22 14:42:22 ERROR Log4j:26 - Empty brackets found in equation! reenter the equation!
+2020-04-22 15:14:56 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-22 15:16:13 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-22 15:16:16 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-22 15:16:19 ERROR Log4j:10 - Invalid equation! reenter the equation

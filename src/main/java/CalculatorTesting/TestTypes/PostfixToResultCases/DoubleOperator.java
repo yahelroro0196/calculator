@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleOperator {

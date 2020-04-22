@@ -1,4 +1,4 @@
-package CalculatorTesting;
+package ShuntingYardCalculator.Calculator;
 
 import ShuntingYardCalculator.Config.ConfigLoader;
 import ShuntingYardCalculator.Config.ConfigSpecificParser;
@@ -7,19 +7,19 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 
-import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValidInput;
+import static ShuntingYardCalculator.Calculator.InputFlow.InputBuilder.buildInput;
 import static ShuntingYardCalculator.Config.Config.*;
 
-public class TestParser {
+public class EquationParser {
     private static final ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
             parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
 
-    public static ArrayList<Pair<String, Type>> parseEquationString(String equationText) {
-        String[] equationChars = equationText.split(SPACE);
+    public static ArrayList<Pair<String, Type>> parseEquationString(String equationText)
+            throws ArithmeticException {
+        String[] splitEquation = equationText.split(SPACE);
         ArrayList<Pair<String, Type>> equation = new ArrayList<>();
-        for (String character : equationChars) {
-            Type inputType = isValidInput(PLACE_HOLDER, String.valueOf(character), VALID_OPERATORS);
-            equation.add(new Pair<>(String.valueOf(character), inputType));
+        for (String token : splitEquation) {
+            buildInput(equation, token, VALID_OPERATORS);
         }
         return equation;
     }

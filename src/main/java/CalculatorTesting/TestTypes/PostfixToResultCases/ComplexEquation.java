@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
 public class ComplexEquation {

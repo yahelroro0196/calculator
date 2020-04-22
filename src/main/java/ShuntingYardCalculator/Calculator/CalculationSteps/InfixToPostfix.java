@@ -70,15 +70,13 @@ public class InfixToPostfix {
     }
 
     private static void checkIfOnlyRightBracket(Stack<Pair<String, Type>> operatorStack) {
-        if (operatorStack.isEmpty()) {
+        if (operatorStack.isEmpty())
             throw new ArithmeticException(INVALID_BRACKETS_ERROR);
-        }
     }
 
     private static void checkIfEmptyBrackets(boolean inserted) {
-        if (!inserted) {
+        if (!inserted)
             throw new ArithmeticException(EMPTY_BRACKETS_ERROR);
-        }
     }
 
     private static boolean isHigherPrecedence(String operatorText, String subOperatorText) {
