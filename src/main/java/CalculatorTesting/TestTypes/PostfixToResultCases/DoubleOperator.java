@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleOperator {
@@ -35,7 +35,7 @@ public class DoubleOperator {
 
     private void inputSetup() {
         DOUBLE_OPERATOR_INPUT = new ArrayList<>();
-        DOUBLE_OPERATOR_INPUT = parseEquationString("/ /");
+        DOUBLE_OPERATOR_INPUT = parse("/ /");
     }
 
     @After

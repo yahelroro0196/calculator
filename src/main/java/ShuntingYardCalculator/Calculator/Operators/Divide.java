@@ -7,11 +7,10 @@ public class Divide extends Operator {
 
     @Override
     public double calculateOperator(double leftOperand, double rightOperand) throws ArithmeticException {
-        if (isNotDividingByZero(rightOperand)) {
+        if (isNotDividingByZero(rightOperand))
             return leftOperand / rightOperand;
-        } else {
+        else
             throw new ArithmeticException(ZERO_DIVISION_ERROR);
-        }
     }
 
     public boolean isNotDividingByZero(double rightOperand) {

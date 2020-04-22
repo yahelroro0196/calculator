@@ -18,29 +18,32 @@ public class InfixToPostfix {
     public static ArrayList<Pair<String, Type>> infixToPostfix(ArrayList<Pair<String, Type>> equation)
             throws ArithmeticException {
         ArrayList<Pair<String, Type>> postfixEquation = new ArrayList<>();
-        Stack<Pair<String, Type>> operatorStack = new Stack<>();
+        Stack<Pair<String, Type>> nonOperandStack = new Stack<>();
         for (Pair<String, Type> currPair : equation) {
             if (currPair.getKey().equals(L_BRACKET)) {
-                operatorStack.push(currPair);
+                nonOperandStack.push(currPair);
             } else if (currPair.getKey().equals(R_BRACKET)) {
-                insertBracketsPart(postfixEquation, operatorStack);
+                insertBracketsPart(postfixEquation, nonOperandStack);
             } else if (currPair.getValue().equals(Type.OPERATOR)) {
-                insertOperatorByPrecedence(postfixEquation, operatorStack, currPair);
+                insertByPrecedence(postfixEquation, nonOperandStack, currPair);
+            } else if (currPair.getValue().equals(Type.FUNCTION)) {
+                nonOperandStack.push(currPair);
             } else {
                 postfixEquation.add(currPair);
             }
         }
-        insertRemainingOperators(postfixEquation, operatorStack);
+        addRemaining(postfixEquation, nonOperandStack);
         return postfixEquation;
     }
 
-    private static void insertOperatorByPrecedence(ArrayList<Pair<String, Type>> postfixEquation,
-                                                   Stack<Pair<String, Type>> operatorStack,
-                                                   Pair<String, Type> currPair) {
+    private static void insertByPrecedence(ArrayList<Pair<String, Type>> postfixEquation,
+                                           Stack<Pair<String, Type>> operatorStack,
+                                           Pair<String, Type> currPair) {
         if (operatorStack.isEmpty()) {
             operatorStack.push(currPair);
         } else {
-            while (!operatorStack.isEmpty() && isHigherPrecedence(currPair.getKey(),
+            while (!operatorStack.isEmpty() && isAnOperator(operatorStack.peek())
+                    && isHigherPrecedence(currPair.getKey(),
                     operatorStack.peek().getKey())) {
                 postfixEquation.add(operatorStack.pop());
             }
@@ -48,8 +51,8 @@ public class InfixToPostfix {
         }
     }
 
-    private static void insertRemainingOperators(ArrayList<Pair<String, Type>> postfixEquation,
-                                                 Stack<Pair<String, Type>> operatorStack) {
+    private static void addRemaining(ArrayList<Pair<String, Type>> postfixEquation,
+                                     Stack<Pair<String, Type>> operatorStack) {
         while (!operatorStack.isEmpty()) {
             postfixEquation.add(operatorStack.pop());
         }
@@ -70,15 +73,13 @@ public class InfixToPostfix {
     }
 
     private static void checkIfOnlyRightBracket(Stack<Pair<String, Type>> operatorStack) {
-        if (operatorStack.isEmpty()) {
+        if (operatorStack.isEmpty())
             throw new ArithmeticException(INVALID_BRACKETS_ERROR);
-        }
     }
 
     private static void checkIfEmptyBrackets(boolean inserted) {
-        if (!inserted) {
+        if (!inserted)
             throw new ArithmeticException(EMPTY_BRACKETS_ERROR);
-        }
     }
 
     private static boolean isHigherPrecedence(String operatorText, String subOperatorText) {
@@ -86,5 +87,9 @@ public class InfixToPostfix {
         Operator operator = operatorFactory.factory(operatorText);
         Operator subOperator = operatorFactory.factory(subOperatorText);
         return (operator.getPrecedence() >= subOperator.getPrecedence());
+    }
+
+    private static boolean isAnOperator(Pair<String, Type> token) {
+        return token.getValue().equals(Type.OPERATOR);
     }
 }

@@ -10,22 +10,24 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValidInput;
 import static ShuntingYardCalculator.Config.Config.*;
 import static org.junit.Assert.assertEquals;
 
 public class Operator {
     public static String OPERATOR_INPUT;
-    private static String OPERATOR_PREVIOUS_INPUT;
     private static ArrayList<Pair<String, Type>> OPERATOR_EQUATION;
     private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
             parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
+    private static final ArrayList<String> VALID_FUNCTIONS = ConfigSpecificParser
+            .parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_FUNCTIONS_CONFIG));
+
     private static Type OPERATOR_OUTPUT;
 
     @Test
     public void test() {
-        assertEquals(OPERATOR_OUTPUT, isValidInput(OPERATOR_PREVIOUS_INPUT, OPERATOR_INPUT, VALID_OPERATORS));
+        assertEquals(OPERATOR_OUTPUT, isValidInput(OPERATOR_INPUT, VALID_OPERATORS, VALID_FUNCTIONS));
     }
 
     @Before
@@ -40,9 +42,8 @@ public class Operator {
 
     private void inputSetup() {
         OPERATOR_EQUATION = new ArrayList<>();
-        OPERATOR_EQUATION = parseEquationString("5 + 5");
+        OPERATOR_EQUATION = parseEquationString("5+5");
         OPERATOR_INPUT = PLACE_HOLDER_OPERATOR;
-        OPERATOR_PREVIOUS_INPUT = PLACE_HOLDER_OPERAND;
     }
 
     @After

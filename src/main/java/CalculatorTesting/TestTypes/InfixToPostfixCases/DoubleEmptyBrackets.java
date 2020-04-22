@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestParser.parseEquationString;
+import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleEmptyBrackets {
@@ -34,7 +34,7 @@ public class DoubleEmptyBrackets {
 
     private void inputSetup() {
         DOUBLE_EMPTY_BRACKETS_INPUT = new ArrayList<>();
-        DOUBLE_EMPTY_BRACKETS_INPUT = parseEquationString("( )");
+        DOUBLE_EMPTY_BRACKETS_INPUT = parseEquationString("()");
     }
 
     @After
