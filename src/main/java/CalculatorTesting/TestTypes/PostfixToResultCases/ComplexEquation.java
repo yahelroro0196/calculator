@@ -28,12 +28,12 @@ public class ComplexEquation {
     }
 
     private void outputSetup() {
-        COMPLEX_EQUATION_OUTPUT = 78135;
+        COMPLEX_EQUATION_OUTPUT = 0.23226162615901796;
     }
 
     private void inputSetup() {
         COMPLEX_EQUATION_INPUT = new ArrayList<>();
-        COMPLEX_EQUATION_INPUT = parse("%5*$8");
+        COMPLEX_EQUATION_INPUT = parse("5 8 $ * %");
     }
 
     @After

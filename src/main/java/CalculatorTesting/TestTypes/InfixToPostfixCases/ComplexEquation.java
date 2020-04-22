@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
 import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
@@ -29,7 +30,7 @@ public class ComplexEquation {
 
     private void outputSetup() {
         COMPLEX_EQUATION_OUTPUT = new ArrayList<>();
-        COMPLEX_EQUATION_OUTPUT = parseEquationString("5 % 5 * 10 2 + ^");
+        COMPLEX_EQUATION_OUTPUT = parse("5 5 * 10 2 + ^ %");
     }
 
     private void inputSetup() {
