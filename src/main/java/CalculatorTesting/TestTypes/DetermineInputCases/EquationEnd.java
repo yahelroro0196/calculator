@@ -2,6 +2,7 @@ package CalculatorTesting.TestTypes.DetermineInputCases;
 
 import ShuntingYardCalculator.Calculator.CalculatorLogic;
 import ShuntingYardCalculator.Config.ConfigLoader;
+import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
 import org.junit.After;
@@ -18,7 +19,8 @@ public class EquationEnd {
     public static String EQUATION_END_INPUT;
     private static String EQUATION_END_PREVIOUS_INPUT;
     private static ArrayList<Pair<String, Type>> EQUATION_END_EQUATION;
-    private static ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
+    private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
+            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
     private static Type EQUATION_END_OUTPUT;
 
     @Test

@@ -1,6 +1,7 @@
 package CalculatorTesting;
 
 import ShuntingYardCalculator.Config.ConfigLoader;
+import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
 
@@ -10,7 +11,8 @@ import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValid
 import static ShuntingYardCalculator.Config.Config.*;
 
 public class TestParser {
-    private static final ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
+    private static final ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
+            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
 
     public static ArrayList<Pair<String, Type>> parseEquationString(String equationText) {
         String[] equationChars = equationText.split(SPACE);

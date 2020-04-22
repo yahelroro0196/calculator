@@ -1,6 +1,7 @@
 package ShuntingYardCalculator.Calculator;
 
 import ShuntingYardCalculator.Config.ConfigLoader;
+import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Logging.Log4j;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
@@ -10,13 +11,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static ShuntingYardCalculator.Config.Config.CONFIG_PATH;
+import static ShuntingYardCalculator.Config.Config.VALID_OPERATORS_CONFIG;
 import static ShuntingYardCalculator.ExceptionType.*;
 
 
 public class CalculatorGui {
 
     public static final String PLACE_HOLDER = "_";
-    private static final ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
+    private static final ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
+            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
 
     public static void menu() {
         ArrayList<Pair<String, Type>> equation = new ArrayList<>();

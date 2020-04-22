@@ -7,4 +7,5 @@ public class Config {
     public static final String PLACE_HOLDER = "_";
     public static final String PLACE_HOLDER_OPERAND = "1";
     public static final String PLACE_HOLDER_OPERATOR = "+";
+    public static final String VALID_OPERATORS_CONFIG = "Valid_Operators";
 }

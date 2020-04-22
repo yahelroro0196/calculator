@@ -5,20 +5,18 @@ import ShuntingYardCalculator.Logging.Log4j;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Properties;
+import java.util.HashMap;
 
-import static ShuntingYardCalculator.Config.ConfigParser.parseValidOperatorsString;
+import static ShuntingYardCalculator.Config.ConfigParser.parseConfigString;
 
 public class ConfigLoader {
-    public static ArrayList<String> loadConfig(String CONFIG_PATH) {
-        Properties prop = new Properties();
+    public static HashMap<String, String> loadConfig(String CONFIG_PATH) {
         try {
             FileInputStream configFile = new FileInputStream(CONFIG_PATH);
             InputStreamReader configStreamReader = new InputStreamReader(configFile);
 
             String propertiesData = loadStreamData(configFile, configStreamReader);
-            return parseValidOperatorsString(propertiesData); // TODO generic parsing
+            return parseConfigString(propertiesData);
         } catch (IOException e) {
             Log4j.displayConfigError();
             System.exit(0);

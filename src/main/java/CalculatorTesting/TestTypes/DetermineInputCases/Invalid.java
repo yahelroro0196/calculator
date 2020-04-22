@@ -2,6 +2,7 @@ package CalculatorTesting.TestTypes.DetermineInputCases;
 
 import ShuntingYardCalculator.Calculator.CalculatorLogic;
 import ShuntingYardCalculator.Config.ConfigLoader;
+import ShuntingYardCalculator.Config.ConfigSpecificParser;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
 import org.junit.After;
@@ -11,15 +12,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static CalculatorTesting.TestParser.parseEquationString;
-import static ShuntingYardCalculator.Config.Config.CONFIG_PATH;
-import static ShuntingYardCalculator.Config.Config.PLACE_HOLDER;
+import static ShuntingYardCalculator.Config.Config.*;
 import static org.junit.Assert.assertEquals;
 
 public class Invalid {
     public static String INVALID_INPUT;
     private static String INVALID_PREVIOUS_INPUT;
     private static ArrayList<Pair<String, Type>> INVALID_EQUATION;
-    private static ArrayList<String> VALID_OPERATORS = ConfigLoader.loadConfig(CONFIG_PATH);
+    private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
+            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
     private static Type INVALID_OUTPUT;
 
     @Test
