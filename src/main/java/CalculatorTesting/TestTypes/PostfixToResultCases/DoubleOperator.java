@@ -1,4 +1,4 @@
-package CalculatorTesting.TestTypes.EdgeCases.PostfixToResultCases;
+package CalculatorTesting.TestTypes.PostfixToResultCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult;
 import ShuntingYardCalculator.Type;
@@ -14,13 +14,13 @@ import static CalculatorTesting.TestParser.parseEquationString;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleOperator {
-    private static ArrayList<Pair<String, Type>> doubleOperatorInput;
-    private static Class<InputMismatchException> doubleOperatorOutput;
+    private static ArrayList<Pair<String, Type>> DOUBLE_OPERATOR_INPUT;
+    private static Class<InputMismatchException> DOUBLE_OPERATOR_OUTPUT;
 
     @Test
     public void test() {
-        assertThrows(doubleOperatorOutput, () ->
-                PostfixToResult.postfixToResult(doubleOperatorInput));
+        assertThrows(DOUBLE_OPERATOR_OUTPUT, () ->
+                PostfixToResult.postfixToResult(DOUBLE_OPERATOR_INPUT));
     }
 
     @Before
@@ -30,17 +30,17 @@ public class DoubleOperator {
     }
 
     private void outputSetup() {
-        doubleOperatorOutput = InputMismatchException.class;
+        DOUBLE_OPERATOR_OUTPUT = InputMismatchException.class;
     }
 
     private void inputSetup() {
-        doubleOperatorInput = new ArrayList<>();
-        doubleOperatorInput = parseEquationString("/ /");
+        DOUBLE_OPERATOR_INPUT = new ArrayList<>();
+        DOUBLE_OPERATOR_INPUT = parseEquationString("/ /");
     }
 
     @After
     public void finalize_tests() {
-        doubleOperatorInput.clear();
-        doubleOperatorOutput = null;
+        DOUBLE_OPERATOR_INPUT.clear();
+        DOUBLE_OPERATOR_OUTPUT = null;
     }
 }

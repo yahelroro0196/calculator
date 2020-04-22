@@ -1,4 +1,4 @@
-package CalculatorTesting.TestTypes.EdgeCases.PostfixToResultCases;
+package CalculatorTesting.TestTypes.PostfixToResultCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult;
 import ShuntingYardCalculator.Type;
@@ -13,12 +13,12 @@ import static CalculatorTesting.TestParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
 public class ComplexEquation {
-    private static ArrayList<Pair<String, Type>> complexEquationInput;
-    private static double complexEquationOutput;
+    private static ArrayList<Pair<String, Type>> COMPLEX_EQUATION_INPUT;
+    private static double COMPLEX_EQUATION_OUTPUT;
 
     @Test
     public void test() {
-        assertEquals(complexEquationOutput, PostfixToResult.postfixToResult(complexEquationInput), 0.01);
+        assertEquals(COMPLEX_EQUATION_OUTPUT, PostfixToResult.postfixToResult(COMPLEX_EQUATION_INPUT), 0.01);
     }
 
     @Before
@@ -28,17 +28,17 @@ public class ComplexEquation {
     }
 
     private void outputSetup() {
-        complexEquationOutput = 78135;
+        COMPLEX_EQUATION_OUTPUT = 78135;
     }
 
     private void inputSetup() {
-        complexEquationInput = new ArrayList<>();
-        complexEquationInput = parseEquationString("5 8 ^ 5 1 * / 10 +");
+        COMPLEX_EQUATION_INPUT = new ArrayList<>();
+        COMPLEX_EQUATION_INPUT = parseEquationString("5 8 ^ 5 1 * / 10 +");
     }
 
     @After
     public void finalize_tests() {
-        complexEquationInput.clear();
-        complexEquationOutput = 0;
+        COMPLEX_EQUATION_INPUT.clear();
+        COMPLEX_EQUATION_OUTPUT = 0;
     }
 }

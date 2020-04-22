@@ -1,4 +1,4 @@
-package CalculatorTesting.TestTypes.EdgeCases.DetermineInputCases;
+package CalculatorTesting.TestTypes.DetermineInputCases;
 
 import ShuntingYardCalculator.Calculator.CalculatorLogic;
 import ShuntingYardCalculator.Config.ConfigLoader;
@@ -13,18 +13,18 @@ import java.util.ArrayList;
 import static CalculatorTesting.TestParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
-public class EquationEnd {
-    public static final String equationEndInput = "";
+public class Valid {
+    public static final String VALID_INPUT = "5";
+    private static final String VALID_PREVIOUS_INPUT = "6";
     private static final String CONFIG_PATH = ".\\src\\main\\resources\\ValidOperators.properties";
-    private static final String equationEndPreviousInput = "_";
-    private static ArrayList<Pair<String, Type>> equationEndEquation;
+    private static ArrayList<Pair<String, Type>> validEquation;
     private static ArrayList<String> validOperators = ConfigLoader.loadConfig(CONFIG_PATH);
-    private static Type equationEndOutput;
+    private static Type validOutput;
 
     @Test
     public void test() {
-        assertEquals(equationEndOutput, CalculatorLogic.determineInput(validOperators, equationEndPreviousInput,
-                equationEndInput, equationEndEquation));
+        assertEquals(validOutput, CalculatorLogic.determineInput(validOperators, VALID_PREVIOUS_INPUT,
+                VALID_INPUT, validEquation));
     }
 
     @Before
@@ -34,17 +34,17 @@ public class EquationEnd {
     }
 
     private void outputSetup() {
-        equationEndOutput = Type.EQUATION_END;
+        validOutput = Type.VALID_INPUT;
     }
 
     private void inputSetup() {
-        equationEndEquation = new ArrayList<>();
-        equationEndEquation = parseEquationString("5 + 5");
+        validEquation = new ArrayList<>();
+        validEquation = parseEquationString("5 + 5");
     }
 
     @After
     public void finalize_tests() {
-        equationEndEquation.clear();
-        equationEndOutput = null;
+        validEquation.clear();
+        validOutput = null;
     }
 }

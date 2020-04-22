@@ -1,4 +1,4 @@
-package CalculatorTesting.TestTypes.EdgeCases.InfixToPostfixCases;
+package CalculatorTesting.TestTypes.InfixToPostfixCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.InfixToPostfix;
 import ShuntingYardCalculator.Type;
@@ -13,13 +13,13 @@ import static CalculatorTesting.TestParser.parseEquationString;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleEmptyBrackets {
-    private static ArrayList<Pair<String, Type>> doubleEmptyBracketsInput;
-    private static Class<ArithmeticException> doubleEmptyBracketsOutput;
+    private static ArrayList<Pair<String, Type>> DOUBLE_EMPTY_BRACKETS_INPUT;
+    private static Class<ArithmeticException> DOUBLE_EMPTY_BRACKETS_OUTPUT;
 
     @Test
     public void test() {
-        assertThrows(doubleEmptyBracketsOutput, () ->
-                InfixToPostfix.infixToPostfix(doubleEmptyBracketsInput));
+        assertThrows(DOUBLE_EMPTY_BRACKETS_OUTPUT, () ->
+                InfixToPostfix.infixToPostfix(DOUBLE_EMPTY_BRACKETS_INPUT));
     }
 
     @Before
@@ -29,17 +29,17 @@ public class DoubleEmptyBrackets {
     }
 
     private void outputSetup() {
-        doubleEmptyBracketsOutput = ArithmeticException.class;
+        DOUBLE_EMPTY_BRACKETS_OUTPUT = ArithmeticException.class;
     }
 
     private void inputSetup() {
-        doubleEmptyBracketsInput = new ArrayList<>();
-        doubleEmptyBracketsInput = parseEquationString("( )");
+        DOUBLE_EMPTY_BRACKETS_INPUT = new ArrayList<>();
+        DOUBLE_EMPTY_BRACKETS_INPUT = parseEquationString("( )");
     }
 
     @After
     public void finalize_tests() {
-        doubleEmptyBracketsInput.clear();
-        doubleEmptyBracketsOutput = null;
+        DOUBLE_EMPTY_BRACKETS_INPUT.clear();
+        DOUBLE_EMPTY_BRACKETS_OUTPUT = null;
     }
 }
