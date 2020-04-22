@@ -16,13 +16,12 @@ import static ShuntingYardCalculator.Config.Config.*;
 import static org.junit.Assert.assertEquals;
 
 public class Operator {
+    private static final ArrayList<String> VALID_FUNCTIONS = ConfigSpecificParser
+            .parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_FUNCTIONS_CONFIG));
     public static String OPERATOR_INPUT;
     private static ArrayList<Pair<String, Type>> OPERATOR_EQUATION;
     private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
             parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
-    private static final ArrayList<String> VALID_FUNCTIONS = ConfigSpecificParser
-            .parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_FUNCTIONS_CONFIG));
-
     private static Type OPERATOR_OUTPUT;
 
     @Test

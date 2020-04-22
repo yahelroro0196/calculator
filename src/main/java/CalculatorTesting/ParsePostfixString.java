@@ -1,4 +1,4 @@
-package CalculatorTesting.TestTypes;
+package CalculatorTesting;
 
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;

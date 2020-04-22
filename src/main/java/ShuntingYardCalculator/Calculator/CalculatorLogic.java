@@ -13,7 +13,6 @@ public class CalculatorLogic {
     public static double calculate(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
             ArithmeticException {
         ArrayList<Pair<String, Type>> postfixEquation = InfixToPostfix.infixToPostfix(equation);
-        System.out.println(postfixEquation);
         return postfixToResult(postfixEquation);
     }
 

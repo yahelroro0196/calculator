@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
+import static CalculatorTesting.ParsePostfixString.parse;
 import static org.junit.Assert.assertEquals;
 
 public class ComplexEquation {
