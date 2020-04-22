@@ -31,7 +31,7 @@ public class ConfigLoader {
     private static String loadStreamData(FileInputStream configFile, InputStreamReader configStreamReader) throws IOException {
         StringBuilder propertiesData = new StringBuilder();
         int charAsInt;
-        while ((charAsInt=configStreamReader.read()) != -1) {
+        while ((charAsInt = configStreamReader.read()) != -1) {
             char dataChar = (char) charAsInt;
             propertiesData.append(dataChar);
         }

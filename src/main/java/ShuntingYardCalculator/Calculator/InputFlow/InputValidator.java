@@ -33,6 +33,7 @@ public class InputValidator {
         }
         return true;
     }
+
     private static boolean isExit(String previousInput, String input) {
         return previousInput.equals(Type.EQUATION_END.name()) && input.equals(EMPTY_INPUT);
     }

@@ -1,38 +1,44 @@
-package CalculatorTesting.EdgeCases.InfixToPostfixCases;
+package CalculatorTesting.TestTypes.EdgeCases.InfixToPostfixCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.InfixToPostfix;
 import ShuntingYardCalculator.Type;
 import javafx.util.Pair;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.EdgeCases.TestParser.parseEquationString;
+import static CalculatorTesting.TestParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
 public class DoubleBrackets {
     private static ArrayList<Pair<String, Type>> doubleBracketsInput;
     private static ArrayList<Pair<String, Type>> doubleBracketsOutput;
 
-    public static void test() {
+    @Test
+    public void test() {
         assertEquals(doubleBracketsOutput, InfixToPostfix.infixToPostfix(doubleBracketsInput));
     }
 
-    public static void setup() {
+    @Before
+    public void setup() {
         inputSetup();
         outputSetup();
     }
 
-    public static void outputSetup() {
+    private void outputSetup() {
         doubleBracketsOutput = new ArrayList<>();
-        doubleBracketsOutput = parseEquationString("555+5*+");
+        doubleBracketsOutput = parseEquationString("5 5 5 + 5 * +");
     }
 
-    public static void inputSetup() {
+    private void inputSetup() {
         doubleBracketsInput = new ArrayList<>();
-        doubleBracketsInput = parseEquationString("5+((5+5)*5)");
+        doubleBracketsInput = parseEquationString("5 + ( ( 5 + 5 ) * 5 )");
     }
 
-    public static void finalize_tests() {
+    @After
+    public void finalize_tests() {
         doubleBracketsInput.clear();
         doubleBracketsOutput.clear();
     }
