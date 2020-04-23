@@ -36,7 +36,6 @@ public class CalculatorGui {
                     input = EMPTY;
                     break;
                 case RETRY:
-                    continue;
             }
         }
     }
@@ -52,6 +51,8 @@ public class CalculatorGui {
             Log4j.displayEquationFileIOError();
         } catch (ParseException exception) {
             Log4j.displayEquationFileParseError();
+        } catch (ArithmeticException exception) {
+            Log4j.displayInvalidEquation();
         }
     }
 

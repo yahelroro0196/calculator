@@ -17,10 +17,11 @@ import java.util.InputMismatchException;
 import static ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult.postfixToResult;
 import static ShuntingYardCalculator.Config.Config.JSON_END;
 import static ShuntingYardCalculator.Config.Config.RELATIVE_FILE_PATHS;
+import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
 
 public class CalculatorLogic {
-    private static final String equationKey = "equation";
     public static final String EQUALS_SYMBOL = "=";
+    private static final String equationKey = "equation";
 
     public static double calculate(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
             ArithmeticException {
@@ -32,29 +33,36 @@ public class CalculatorLogic {
         return new ArrayList<>();
     }
 
-    public static void loadEquationFile(String fileName) throws IOException, ParseException {
+    public static void loadEquationFile(String fileName) throws IOException, ParseException, ArithmeticException {
         JSONParser parser = new JSONParser();
+        FileWriter fileWriter = null;
         try {
             Object fileReader = parser.parse(new FileReader(RELATIVE_FILE_PATHS + fileName + JSON_END));
-            FileWriter fileWriter = new FileWriter(RELATIVE_FILE_PATHS + fileName + JSON_END);
+            fileWriter = new FileWriter(RELATIVE_FILE_PATHS + fileName + JSON_END);
             JSONObject jsonOfEquation = (JSONObject) fileReader;
             iterateEquation(jsonOfEquation);
             fileWriter.write(jsonOfEquation.toJSONString());
-            fileWriter.close();
         } catch (FileNotFoundException exception) {
             throw new FileNotFoundException(Type.FILE_NOT_FOUND.name());
         } catch (IOException exception) {
             throw new IOException(Type.INVALID_IO.name());
+        } finally {
+            if (fileWriter != null)
+                fileWriter.close();
         }
     }
 
     private static JSONObject iterateEquation(JSONObject jsonOfEquations) {
         for (Object currEquationKey : jsonOfEquations.keySet()) {
             String equationText = (String) jsonOfEquations.get(currEquationKey);
-            ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(equationText);
-            String answer = String.valueOf(CalculatorLogic.calculate(equation));
-            String completeAnswer = equationText + EQUALS_SYMBOL + answer;
-            jsonOfEquations.put(currEquationKey, completeAnswer);
+            try {
+                ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(equationText);
+                String answer = String.valueOf(CalculatorLogic.calculate(equation));
+                String completeAnswer = equationText + EQUALS_SYMBOL + answer;
+                jsonOfEquations.put(currEquationKey, completeAnswer);
+            } catch (Exception exception) {
+                throw new ArithmeticException(INVALID_EQUATION_ERROR);
+            }
         }
         return jsonOfEquations;
     }

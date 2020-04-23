@@ -37,4 +37,8 @@ public class Log4j {
     public static void displayEquationFileNotFound() {
         logger.error("File not found! check the name you typed!");
     }
+
+    public static void displayErrorClosingFile() {
+        logger.error("Error closing equations file!");
+    }
 }
