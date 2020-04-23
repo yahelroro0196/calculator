@@ -17,7 +17,6 @@ import java.util.InputMismatchException;
 import static ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult.postfixToResult;
 import static ShuntingYardCalculator.Config.Config.JSON_END;
 import static ShuntingYardCalculator.Config.Config.RELATIVE_FILE_PATHS;
-import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
 
 public class CalculatorLogic {
     public static final String EQUALS_SYMBOL = "=";
@@ -55,14 +54,10 @@ public class CalculatorLogic {
     private static JSONObject iterateEquation(JSONObject jsonOfEquations) {
         for (Object currEquationKey : jsonOfEquations.keySet()) {
             String equationText = (String) jsonOfEquations.get(currEquationKey);
-            try {
-                ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(equationText);
-                String answer = String.valueOf(CalculatorLogic.calculate(equation));
-                String completeAnswer = equationText + EQUALS_SYMBOL + answer;
-                jsonOfEquations.put(currEquationKey, completeAnswer);
-            } catch (Exception exception) {
-                throw new ArithmeticException(INVALID_EQUATION_ERROR);
-            }
+            ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(equationText);
+            String answer = String.valueOf(CalculatorLogic.calculate(equation));
+            String completeAnswer = equationText + EQUALS_SYMBOL + answer;
+            jsonOfEquations.put(currEquationKey, completeAnswer);
         }
         return jsonOfEquations;
     }
