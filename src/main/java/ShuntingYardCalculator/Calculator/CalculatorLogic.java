@@ -13,7 +13,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 
 import static ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult.postfixToResult;
 import static ShuntingYardCalculator.Config.Config.JSON_END;
@@ -21,7 +20,7 @@ import static ShuntingYardCalculator.Config.Config.RELATIVE_FILE_PATHS;
 
 public class CalculatorLogic {
     private static final String equationKey = "equation";
-    private static final String answerKey = "answer";
+    public static final String EQUALS_SYMBOL = "=";
 
     public static double calculate(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
             ArithmeticException {
@@ -50,14 +49,12 @@ public class CalculatorLogic {
     }
 
     private static JSONObject iterateEquation(JSONObject jsonOfEquations) {
-        for (Object currEquationClause : jsonOfEquations.keySet()) {
-            String currEquation = (String) currEquationClause;
-            JSONObject equationClause = (JSONObject) jsonOfEquations.get(currEquation);
-            String equationText = (String) equationClause.get(equationKey);
+        for (Object currEquationKey : jsonOfEquations.keySet()) {
+            String equationText = (String) jsonOfEquations.get(currEquationKey);
             ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(equationText);
             String answer = String.valueOf(CalculatorLogic.calculate(equation));
-            equationClause.put(answerKey, answer);
-            jsonOfEquations.put(currEquation, equationClause);
+            String completeAnswer = equationText + EQUALS_SYMBOL + answer;
+            jsonOfEquations.put(currEquationKey, completeAnswer);
         }
         return jsonOfEquations;
     }

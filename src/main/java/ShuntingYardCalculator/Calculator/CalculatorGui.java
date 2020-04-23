@@ -35,6 +35,8 @@ public class CalculatorGui {
                 case EXIT:
                     input = EMPTY;
                     break;
+                case RETRY:
+                    continue;
             }
         }
     }

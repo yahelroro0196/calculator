@@ -11,8 +11,10 @@ public class OptionsFactory {
                 return ENTER_EQUATION;
             case "2":
                 return ENTER_FILENAME;
-            default:
+            case "3":
                 return EXIT;
+            default:
+                return RETRY;
         }
     }
 }
