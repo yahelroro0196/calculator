@@ -1,4 +1,4 @@
-package CalculatorTesting;
+package CalculatorTesting.TestingParsers;
 
 import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;

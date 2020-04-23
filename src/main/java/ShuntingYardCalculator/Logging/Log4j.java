@@ -6,39 +6,15 @@ public class Log4j {
 
     static Logger logger = Logger.getLogger(Log4j.class.getName());
 
-    public static void displayInvalidEquation() {
-        logger.error("Invalid equation! reenter the equation");
+    public static void displayInfo(String text) {
+        logger.info(text);
     }
 
-    public static void displayConfigError() {
-        logger.error("Error loading config!");
+    public static void displayWarning(String text) {
+        logger.warn(text);
     }
 
-    public static void displayZeroDivisionError() {
-        logger.error("Can't divide by Zero");
-    }
-
-    public static void displayEmptyBracketsError() {
-        logger.error("Empty brackets found in equation! reenter the equation!");
-    }
-
-    public static void displayInvalidBracketsError() {
-        logger.error("Invalid brackets form found in equation! reenter the equation!");
-    }
-
-    public static void displayEquationFileIOError() {
-        logger.error("Error reading the equations file!");
-    }
-
-    public static void displayEquationFileParseError() {
-        logger.error("Error parsing JSON format! try editing the json format to be correct!");
-    }
-
-    public static void displayEquationFileNotFound() {
-        logger.error("File not found! check the name you typed!");
-    }
-
-    public static void displayErrorClosingFile() {
-        logger.error("Error closing equations file!");
+    public static void displayError(String text) {
+        logger.error(text);
     }
 }

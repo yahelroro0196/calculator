@@ -43,17 +43,16 @@ public class CalculatorGui {
     private static void equationsFromFile() {
         displayGetFilename();
         String inputFilename = receiveInput();
-        try {
             CalculatorLogic.loadEquationFile(inputFilename);
-        } catch (FileNotFoundException exception) {
-            Log4j.displayEquationFileNotFound();
-        } catch (IOException exception) {
-            Log4j.displayEquationFileIOError();
-        } catch (ParseException exception) {
-            Log4j.displayEquationFileParseError();
-        } catch (ArithmeticException exception) {
-            Log4j.displayInvalidEquation();
-        }
+//        } catch (FileNotFoundException exception) {
+//            Log4j.displayError("File not found! check the name you typed!");
+//        } catch (IOException exception) {
+//            Log4j.displayError("Error reading the equations file!");
+//        } catch (ParseException exception) {
+//            Log4j.displayError("Error parsing JSON format! try editing the json format to be correct!");
+//        } catch (ArithmeticException exception) {
+//            Log4j.displayError("Invalid equation! reenter the equation");
+//        }
     }
 
     private static void manualEquationInput() {
@@ -64,36 +63,35 @@ public class CalculatorGui {
                 ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(inputEquation);
                 evaluateEquation(equation);
             } catch (ArithmeticException exception) {
-                Log4j.displayInvalidEquation();
+                Log4j.displayError("Invalid equation! reenter the equation");
             }
         }
     }
 
-    private static ArrayList<Pair<String, Type>> evaluateEquation(ArrayList<Pair<String, Type>> equation) {
+    private static void evaluateEquation(ArrayList<Pair<String, Type>> equation) {
         if (!equation.isEmpty()) {
             try {
                 double result = CalculatorLogic.calculate(equation);
                 displayResult(result);
             } catch (InputMismatchException exception) {
-                Log4j.displayInvalidEquation();
+                Log4j.displayError("Invalid equation! reenter the equation");
             } catch (ArithmeticException exception) {
                 arithmeticExceptionType(exception);
             }
-            equation = CalculatorLogic.resetEquation();
+            CalculatorLogic.resetEquation(equation);
         }
-        return equation;
     }
 
     private static void arithmeticExceptionType(ArithmeticException exception) {
         switch (exception.getMessage()) {
             case ZERO_DIVISION_ERROR:
-                Log4j.displayZeroDivisionError();
+                Log4j.displayWarning("Can't divide by Zero");
                 break;
             case EMPTY_BRACKETS_ERROR:
-                Log4j.displayEmptyBracketsError();
+                Log4j.displayWarning("Empty brackets found in equation! reenter the equation!");
                 break;
             case INVALID_BRACKETS_ERROR:
-                Log4j.displayInvalidBracketsError();
+                Log4j.displayWarning("Invalid brackets form found in equation! reenter the equation!");
                 break;
         }
     }
@@ -105,24 +103,11 @@ public class CalculatorGui {
 
     public static void displayMenu() {
         System.out.println("Welcome to the calculator!");
-        displayInputStructure();
-        displayValidOperators();
-        displayValidFunctions();
+        Log4j.displayInfo("Type an equation and hit enter.\nenter empty input twice to exit program");
+        Log4j.displayInfo("The valid operators you can use are: " + VALID_OPERATORS);
+        Log4j.displayInfo("The valid functions you can use are: " + VALID_FUNCTIONS);
         displayExampleEquations();
         displayOptions();
-    }
-
-    public static void displayValidOperators() {
-        System.out.println("The valid operators you can use are: " + VALID_OPERATORS);
-    }
-
-    public static void displayValidFunctions() {
-        System.out.println("The valid functions you can use are: " + VALID_FUNCTIONS);
-    }
-
-    public static void displayInputStructure() {
-        System.out.println("Type an equation and hit enter.");
-        System.out.println("enter empty input twice to exit program");
     }
 
     public static void displayResult(double result) {
