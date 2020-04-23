@@ -2,7 +2,7 @@ package CalculatorTesting.TestTypes.IsValidInputCases;
 
 import ShuntingYardCalculator.Config.ConfigLoader;
 import ShuntingYardCalculator.Config.ConfigSpecificParser;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 import org.junit.After;
 import org.junit.Before;
@@ -17,11 +17,11 @@ import static org.junit.Assert.assertEquals;
 
 public class Operator {
     private static final ArrayList<String> VALID_FUNCTIONS = ConfigSpecificParser
-            .parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_FUNCTIONS_CONFIG));
+            .parseCommaSeparatedConfig(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_FUNCTIONS_CONFIG));
     public static String OPERATOR_INPUT;
     private static ArrayList<Pair<String, Type>> OPERATOR_EQUATION;
     private static ArrayList<String> VALID_OPERATORS = ConfigSpecificParser.
-            parseValidOperators(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
+            parseCommaSeparatedConfig(ConfigLoader.loadConfig(CONFIG_PATH).get(VALID_OPERATORS_CONFIG));
     private static Type OPERATOR_OUTPUT;
 
     @Test

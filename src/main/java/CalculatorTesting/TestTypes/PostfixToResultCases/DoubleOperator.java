@@ -1,7 +1,7 @@
 package CalculatorTesting.TestTypes.PostfixToResultCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 import org.junit.After;
 import org.junit.Before;

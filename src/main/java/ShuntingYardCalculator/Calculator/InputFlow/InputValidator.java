@@ -1,6 +1,6 @@
 package ShuntingYardCalculator.Calculator.InputFlow;
 
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 
 import java.util.ArrayList;
 

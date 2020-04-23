@@ -1,9 +1,14 @@
 package ShuntingYardCalculator.Calculator;
 
+import ShuntingYardCalculator.Enums.MenuOption;
+import ShuntingYardCalculator.Enums.Type;
 import ShuntingYardCalculator.Logging.Log4j;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.OptionsFactory;
 import javafx.util.Pair;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -15,22 +20,53 @@ import static ShuntingYardCalculator.ExceptionType.*;
 public class CalculatorGui {
     public static void menu() {
         ArrayList<Pair<String, Type>> equation;
-        String inputEquation = SPACE;
-        displayMenu();
-        while (inputEquation.length() != 0) {
-            inputEquation = receiveInput();
-            if (!inputEquation.equals(EMPTY)) {
-                try {
-                    equation = EquationParser.parseEquationString(inputEquation);
-                    solveEquation(equation);
-                } catch (ArithmeticException exception) {
-                    Log4j.displayInvalidEquation();
-                }
+        String input = SPACE;
+        while (input.length() != 0) {
+            displayMenu();
+            input = receiveInput();
+            MenuOption choice = OptionsFactory.factory(input);
+            switch (choice) {
+                case ENTER_EQUATION:
+                    manualEquationInput();
+                    break;
+                case ENTER_FILENAME:
+                    equationsFromFile();
+                    break;
+                case EXIT:
+                    input = EMPTY;
+                    break;
             }
         }
     }
 
-    private static ArrayList<Pair<String, Type>> solveEquation(ArrayList<Pair<String, Type>> equation) {
+    private static void equationsFromFile() {
+        displayGetFilename();
+        String inputFilename = receiveInput();
+        try {
+            CalculatorLogic.loadEquationFile(inputFilename);
+        } catch (FileNotFoundException exception) {
+            Log4j.displayEquationFileNotFound();
+        } catch (IOException exception) {
+            Log4j.displayEquationFileIOError();
+        } catch (ParseException exception) {
+            Log4j.displayEquationFileParseError();
+        }
+    }
+
+    private static void manualEquationInput() {
+        displayGetEquation();
+        String inputEquation = receiveInput();
+        if (!inputEquation.equals(EMPTY)) {
+            try {
+                ArrayList<Pair<String, Type>> equation = EquationParser.parseEquationString(inputEquation);
+                evaluateEquation(equation);
+            } catch (ArithmeticException exception) {
+                Log4j.displayInvalidEquation();
+            }
+        }
+    }
+
+    private static ArrayList<Pair<String, Type>> evaluateEquation(ArrayList<Pair<String, Type>> equation) {
         if (!equation.isEmpty()) {
             try {
                 double result = CalculatorLogic.calculate(equation);
@@ -41,7 +77,6 @@ public class CalculatorGui {
                 arithmeticExceptionType(exception);
             }
             equation = CalculatorLogic.resetEquation();
-            displayMenu();
         }
         return equation;
     }
@@ -62,7 +97,6 @@ public class CalculatorGui {
 
     public static String receiveInput() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Equation: ");
         return scanner.nextLine();
     }
 
@@ -72,6 +106,7 @@ public class CalculatorGui {
         displayValidOperators();
         displayValidFunctions();
         displayExampleEquations();
+        displayOptions();
     }
 
     public static void displayValidOperators() {
@@ -79,7 +114,7 @@ public class CalculatorGui {
     }
 
     public static void displayValidFunctions() {
-        System.out.println("The valid operators you can use are: " + VALID_FUNCTIONS);
+        System.out.println("The valid functions you can use are: " + VALID_FUNCTIONS);
     }
 
     public static void displayInputStructure() {
@@ -96,5 +131,21 @@ public class CalculatorGui {
         System.out.println("5^8/(5*1)+10");
         System.out.println("%5*$8");
         System.out.println("%5*5*(10+2)");
+    }
+
+    public static void displayOptions() {
+        System.out.println("Options:");
+        System.out.println("1: Enter an equation");
+        System.out.println("2: Enter a filename (json) with equations to solve");
+        System.out.println("3: Exit");
+        System.out.print("Chosen option: ");
+    }
+
+    public static void displayGetEquation() {
+        System.out.print("Equation: ");
+    }
+
+    public static void displayGetFilename() {
+        System.out.print("Filename: ");
     }
 }

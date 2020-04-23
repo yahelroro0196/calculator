@@ -1,6 +1,6 @@
 package ShuntingYardCalculator.Calculator;
 
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
