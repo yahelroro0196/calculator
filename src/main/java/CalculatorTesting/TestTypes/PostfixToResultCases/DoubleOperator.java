@@ -1,7 +1,7 @@
 package CalculatorTesting.TestTypes.PostfixToResultCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.PostfixToResult;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
+import static CalculatorTesting.ParsePostfixString.parse;
 import static org.junit.Assert.assertThrows;
 
 public class DoubleOperator {

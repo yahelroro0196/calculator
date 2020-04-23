@@ -4,7 +4,7 @@ import ShuntingYardCalculator.Calculator.Functions.Function;
 import ShuntingYardCalculator.Calculator.Functions.FunctionFactory;
 import ShuntingYardCalculator.Calculator.Operators.Operator;
 import ShuntingYardCalculator.Calculator.Operators.OperatorFactory;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 
 import java.util.ArrayList;

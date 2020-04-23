@@ -15,3 +15,9 @@
 2020-04-22 15:16:13 ERROR Log4j:10 - Invalid equation! reenter the equation
 2020-04-22 15:16:16 ERROR Log4j:10 - Invalid equation! reenter the equation
 2020-04-22 15:16:19 ERROR Log4j:10 - Invalid equation! reenter the equation
+2020-04-23 09:37:21 ERROR Log4j:26 - Empty brackets found in equation! reenter the equation!
+2020-04-23 10:55:16 ERROR Log4j:38 - File not found! check the name you typed!
+2020-04-23 10:56:57 ERROR Log4j:38 - File not found! check the name you typed!
+2020-04-23 10:57:43 ERROR Log4j:38 - File not found! check the name you typed!
+2020-04-23 10:58:33 ERROR Log4j:38 - File not found! check the name you typed!
+2020-04-23 11:27:48 ERROR Log4j:14 - Error loading config!

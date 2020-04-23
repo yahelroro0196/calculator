@@ -10,10 +10,6 @@ public class Log4j {
         logger.error("Invalid equation! reenter the equation");
     }
 
-    public static void displayInvalidInput() {
-        logger.warn("Invalid input! reenter the input");
-    }
-
     public static void displayConfigError() {
         logger.error("Error loading config!");
     }
@@ -28,5 +24,21 @@ public class Log4j {
 
     public static void displayInvalidBracketsError() {
         logger.error("Invalid brackets form found in equation! reenter the equation!");
+    }
+
+    public static void displayEquationFileIOError() {
+        logger.error("Error reading the equations file!");
+    }
+
+    public static void displayEquationFileParseError() {
+        logger.error("Error parsing JSON format! try editing the json format to be correct!");
+    }
+
+    public static void displayEquationFileNotFound() {
+        logger.error("File not found! check the name you typed!");
+    }
+
+    public static void displayErrorClosingFile() {
+        logger.error("Error closing equations file!");
     }
 }

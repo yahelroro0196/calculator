@@ -1,7 +1,7 @@
 package CalculatorTesting.TestTypes.InfixToPostfixCases;
 
 import ShuntingYardCalculator.Calculator.CalculationSteps.InfixToPostfix;
-import ShuntingYardCalculator.Type;
+import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 import org.junit.After;
 import org.junit.Before;
@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static CalculatorTesting.TestTypes.ParsePostfixString.parse;
+import static CalculatorTesting.ParsePostfixString.parse;
 import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
 import static org.junit.Assert.assertEquals;
 
