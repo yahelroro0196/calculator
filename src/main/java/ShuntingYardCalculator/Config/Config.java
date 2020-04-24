@@ -9,6 +9,8 @@ public class Config {
     public static final String EMPTY = "";
     public static final String PLACE_HOLDER_OPERAND = "1";
     public static final String PLACE_HOLDER_OPERATOR = "+";
+    public static final String L_BRACKET = "(";
+    public static final String R_BRACKET = ")";
     public static final String EQUATIONS_FILE_EXTENSION = ".txt";
     public static final String VALID_OPERATORS_CONFIG = "Valid_Operators";
     public static final String VALID_FUNCTIONS_CONFIG = "Valid_Functions";

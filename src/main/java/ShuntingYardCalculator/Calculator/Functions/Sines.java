@@ -1,8 +1,13 @@
 package ShuntingYardCalculator.Calculator.Functions;
 
 public class Sines extends Function {
-    @Override
+    private int precedence = 5;
+
     public double calculateFunction(double operand) {
-        return Math.sin(operand);
+        return Math.sin(Math.toRadians(operand));
+    }
+
+    public int getPrecedence() {
+        return precedence;
     }
 }

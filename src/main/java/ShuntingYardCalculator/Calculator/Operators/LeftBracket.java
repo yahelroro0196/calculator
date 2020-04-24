@@ -1,10 +1,10 @@
 package ShuntingYardCalculator.Calculator.Operators;
 
 public class LeftBracket extends Operator {
-    protected int precedence = 4;
+    protected int precedence = 5;
 
     @Override
-    public double calculateOperator(double leftOperand, double rightOperand) {
+    public double calculate(double leftOperand, double rightOperand) {
         return 0;
     }
 

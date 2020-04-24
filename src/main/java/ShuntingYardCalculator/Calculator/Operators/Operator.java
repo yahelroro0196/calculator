@@ -1,11 +1,11 @@
 package ShuntingYardCalculator.Calculator.Operators;
 
-public abstract class Operator extends OperatorFactory {
+import ShuntingYardCalculator.Calculator.Symbol;
+
+public abstract class Operator extends Symbol {
     private int precedence;
 
-    public abstract double calculateOperator(double leftOperand, double rightOperand);
+    public abstract double calculate(double leftOperand, double rightOperand);
 
-    public int getPrecedence() {
-        return precedence;
-    }
+    public abstract int getPrecedence();
 }

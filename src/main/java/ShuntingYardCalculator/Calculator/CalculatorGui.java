@@ -6,6 +6,9 @@ import ShuntingYardCalculator.Logging.Log4j;
 import ShuntingYardCalculator.OptionsFactory;
 import javafx.util.Pair;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -16,7 +19,6 @@ import static ShuntingYardCalculator.ExceptionType.*;
 
 public class CalculatorGui {
     public static void menu() {
-        ArrayList<Pair<String, Type>> equation;
         String input = SPACE;
         while (input.length() != 0) {
             displayMenu();
@@ -39,17 +41,12 @@ public class CalculatorGui {
 
     private static void equationsFromFile() {
         displayGetFilename();
-        String inputFilename = receiveInput();
-        CalculatorLogic.loadEquationFile(inputFilename);
-//        } catch (FileNotFoundException exception) {
-//            Log4j.displayError("File not found! check the name you typed!");
-//        } catch (IOException exception) {
-//            Log4j.displayError("Error reading the equations file!");
-//        } catch (ParseException exception) {
-//            Log4j.displayError("Error parsing JSON format! try editing the json format to be correct!");
-//        } catch (ArithmeticException exception) {
-//            Log4j.displayError("Invalid equation! reenter the equation");
-//        }
+        try {
+            String inputFilename = receiveInput();
+            CalculatorLogic.loadEquationFile(inputFilename);
+        } catch (ArithmeticException exception) {
+            Log4j.displayError("Invalid equation! reenter the equation");
+        }
     }
 
     private static void manualEquationInput() {
