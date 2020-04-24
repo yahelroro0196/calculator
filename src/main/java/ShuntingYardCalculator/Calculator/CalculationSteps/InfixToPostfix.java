@@ -61,25 +61,33 @@ public class InfixToPostfix {
     private static void insertBracketsPart(ArrayList<Pair<String, Type>> postfixEquation,
                                            Stack<Pair<String, Type>> operatorStack) throws ArithmeticException {
         boolean insertedBracketsContents = false;
-        checkIfOnlyRightBracket(operatorStack);
+        isStandaloneBracket(operatorStack);
         while (!operatorStack.peek().getKey().equals(L_BRACKET)) {
             if (!operatorStack.peek().getKey().equals(R_BRACKET)) {
                 postfixEquation.add(operatorStack.pop());
                 insertedBracketsContents = true;
             }
         }
-        checkIfEmptyBrackets(insertedBracketsContents);
+        isEmptyBrackets(insertedBracketsContents, postfixEquation);
         operatorStack.pop();
+        isFunctionBrackets(operatorStack, postfixEquation);
     }
 
-    private static void checkIfOnlyRightBracket(Stack<Pair<String, Type>> operatorStack) {
+    private static void isStandaloneBracket(Stack<Pair<String, Type>> operatorStack) {
         if (operatorStack.isEmpty())
             throw new ArithmeticException(INVALID_BRACKETS_ERROR);
     }
 
-    private static void checkIfEmptyBrackets(boolean inserted) {
-        if (!inserted)
+    private static void isEmptyBrackets(boolean inserted, ArrayList<Pair<String, Type>> postfixEquation) {
+        if (!inserted && !postfixEquation.get(postfixEquation.size() - 1).getValue().equals(Type.OPERAND))
             throw new ArithmeticException(EMPTY_BRACKETS_ERROR);
+    }
+
+    private static void isFunctionBrackets(Stack<Pair<String, Type>> operatorStack,
+                                              ArrayList<Pair<String, Type>> postfixEquation) {
+        if (operatorStack.peek().getValue().equals(Type.FUNCTION)) {
+            postfixEquation.add(operatorStack.pop());
+        }
     }
 
     private static boolean isHigherPrecedence(String operatorText, String subOperatorText) {

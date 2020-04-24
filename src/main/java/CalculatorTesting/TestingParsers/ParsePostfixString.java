@@ -12,7 +12,7 @@ public class ParsePostfixString {
     public static ArrayList<Pair<String, Type>> parse(String postfix) {
         ArrayList<Pair<String, Type>> postfixEquation = new ArrayList<>();
         for (String token : postfix.split(SPACE)) {
-            buildInput(postfixEquation, token, VALID_OPERATORS, VALID_FUNCTIONS);
+            buildInput(postfixEquation, token);
         }
         return postfixEquation;
     }

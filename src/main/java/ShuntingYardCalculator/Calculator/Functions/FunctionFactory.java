@@ -3,10 +3,12 @@ package ShuntingYardCalculator.Calculator.Functions;
 public class FunctionFactory {
     public Function factory(String function) {
         switch (function) {
-            case "$":
+            case "s":
                 return new Sines();
-            case "%":
+            case "c":
                 return new Cosines();
+            case "t":
+                return new Tangent();
             default:
                 return null;
         }

@@ -1,8 +1,8 @@
 package ShuntingYardCalculator.Calculator.Functions;
 
-public class Cosines extends Function {
+public class Tangent extends Function {
     @Override
     public double calculateFunction(double operand) {
-        return Math.cos(operand);
+        return Math.tan(operand);
     }
 }

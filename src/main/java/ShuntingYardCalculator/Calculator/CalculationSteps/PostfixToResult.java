@@ -31,9 +31,6 @@ public class PostfixToResult {
                 calculateNumberPairs(operandStack, currPair);
             }
         }
-        while (operandStack.size() > 1) {
-            calculateNumberPairs(operandStack, new Pair<>(PLUS, Type.OPERATOR));
-        }
         result = Double.parseDouble(operandStack.pop().getKey());
         return result;
     }

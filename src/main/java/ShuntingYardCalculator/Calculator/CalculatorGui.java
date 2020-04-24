@@ -5,10 +5,7 @@ import ShuntingYardCalculator.Enums.Type;
 import ShuntingYardCalculator.Logging.Log4j;
 import ShuntingYardCalculator.OptionsFactory;
 import javafx.util.Pair;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -43,7 +40,7 @@ public class CalculatorGui {
     private static void equationsFromFile() {
         displayGetFilename();
         String inputFilename = receiveInput();
-            CalculatorLogic.loadEquationFile(inputFilename);
+        CalculatorLogic.loadEquationFile(inputFilename);
 //        } catch (FileNotFoundException exception) {
 //            Log4j.displayError("File not found! check the name you typed!");
 //        } catch (IOException exception) {
@@ -117,8 +114,8 @@ public class CalculatorGui {
     public static void displayExampleEquations() {
         System.out.println("Example equations:");
         System.out.println("5^8/(5*1)+10");
-        System.out.println("%5*$8");
-        System.out.println("%5*5*(10+2)");
+        System.out.println("cos(5)*sin(8)");
+        System.out.println("sin(5)*5*(10+2)");
     }
 
     public static void displayOptions() {
