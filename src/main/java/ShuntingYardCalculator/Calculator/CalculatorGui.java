@@ -6,9 +6,6 @@ import ShuntingYardCalculator.Logging.Log4j;
 import ShuntingYardCalculator.OptionsFactory;
 import javafx.util.Pair;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -118,7 +115,7 @@ public class CalculatorGui {
     public static void displayOptions() {
         System.out.println("Options:");
         System.out.println("1: Enter an equation");
-        System.out.println("2: Enter a filename (json) with equations to solve");
+        System.out.println("2: Enter a filename (.txt) with equations to solve");
         System.out.println("3: Exit");
         System.out.print("Chosen option: ");
     }

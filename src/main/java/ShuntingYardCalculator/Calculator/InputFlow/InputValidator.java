@@ -2,8 +2,6 @@ package ShuntingYardCalculator.Calculator.InputFlow;
 
 import ShuntingYardCalculator.Enums.Type;
 
-import java.util.ArrayList;
-
 import static ShuntingYardCalculator.Config.Config.VALID_FUNCTIONS;
 import static ShuntingYardCalculator.Config.Config.VALID_OPERATORS;
 

@@ -6,7 +6,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 import static ShuntingYardCalculator.Calculator.InputFlow.InputBuilder.buildInput;
-import static ShuntingYardCalculator.Config.Config.*;
+import static ShuntingYardCalculator.Config.Config.SPACE;
 
 public class ParsePostfixString {
     public static ArrayList<Pair<String, Type>> parse(String postfix) {

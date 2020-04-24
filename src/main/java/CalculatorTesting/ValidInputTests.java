@@ -5,7 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValidInput;
-import static ShuntingYardCalculator.Config.Config.*;
+import static ShuntingYardCalculator.Config.Config.PLACE_HOLDER_OPERAND;
+import static ShuntingYardCalculator.Config.Config.PLACE_HOLDER_OPERATOR;
 
 public class ValidInputTests {
     @Test

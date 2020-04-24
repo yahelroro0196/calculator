@@ -30,4 +30,4 @@ calculator.iml
 /target/classes/META-INF/calculator.kotlin_module
 /src/main/java/META-INF/
 /src/main/resources/META-INF
-log.out
+.log.out
