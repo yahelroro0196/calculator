@@ -10,8 +10,8 @@ import static ShuntingYardCalculator.Calculator.InputFlow.InputValidator.isValid
 public class InputBuilder {
 
     public static void buildInput(ArrayList<Pair<String, Type>> equation,
-                                  String input, ArrayList<String> validOperators, ArrayList<String> validFunctions) {
-        Type inputType = isValidInput(input, validOperators, validFunctions);
+                                  String input) {
+        Type inputType = isValidInput(input);
         equation.add(new Pair<>(input, inputType));
     }
 }
