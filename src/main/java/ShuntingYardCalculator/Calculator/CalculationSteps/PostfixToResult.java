@@ -14,11 +14,8 @@ import java.util.Stack;
 import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
 
 public class PostfixToResult {
-    public static final String PLUS = "+";
-
     public static double postfixToResult(ArrayList<Pair<String, Type>> equation) throws InputMismatchException,
             ArithmeticException {
-        double result;
         Stack<Pair<String, Type>> operandStack = new Stack<>();
         for (Pair<String, Type> currPair : equation) {
             if (currPair.getValue().equals(Type.OPERAND)) {
@@ -31,8 +28,7 @@ public class PostfixToResult {
                 calculateNumberPairs(operandStack, currPair);
             }
         }
-        result = Double.parseDouble(operandStack.pop().getKey());
-        return result;
+        return Double.parseDouble(operandStack.pop().getKey());
     }
 
     private static void calculateNumberPairs(Stack<Pair<String, Type>> operandStack,
@@ -41,7 +37,7 @@ public class PostfixToResult {
         double rightOperand = Double.parseDouble(operandStack.pop().getKey());
         double leftOperand = Double.parseDouble(operandStack.pop().getKey());
         Operator operator = new OperatorFactory().factory(operatorText);
-        double calculationResult = operator.calculateOperator(leftOperand, rightOperand);
+        double calculationResult = operator.calculate(leftOperand, rightOperand);
         Pair<String, Type> calculationPair = new Pair<>(String.valueOf(calculationResult), Type.OPERAND);
         operandStack.push(calculationPair);
     }

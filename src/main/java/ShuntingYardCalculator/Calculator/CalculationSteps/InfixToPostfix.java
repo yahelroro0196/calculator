@@ -1,61 +1,54 @@
 package ShuntingYardCalculator.Calculator.CalculationSteps;
 
-import ShuntingYardCalculator.Calculator.Operators.Operator;
+import ShuntingYardCalculator.Calculator.Functions.FunctionFactory;
 import ShuntingYardCalculator.Calculator.Operators.OperatorFactory;
+import ShuntingYardCalculator.Calculator.Symbol;
 import ShuntingYardCalculator.Enums.Type;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
+import static ShuntingYardCalculator.Config.Config.L_BRACKET;
+import static ShuntingYardCalculator.Config.Config.R_BRACKET;
 import static ShuntingYardCalculator.ExceptionType.EMPTY_BRACKETS_ERROR;
 import static ShuntingYardCalculator.ExceptionType.INVALID_BRACKETS_ERROR;
 
 public class InfixToPostfix {
-    public static final String L_BRACKET = "(";
-    public static final String R_BRACKET = ")";
-
     public static ArrayList<Pair<String, Type>> infixToPostfix(ArrayList<Pair<String, Type>> equation)
             throws ArithmeticException {
         ArrayList<Pair<String, Type>> postfixEquation = new ArrayList<>();
-        Stack<Pair<String, Type>> nonOperandStack = new Stack<>();
+        Stack<Pair<String, Type>> operatorStack = new Stack<>();
         for (Pair<String, Type> currPair : equation) {
-            if (currPair.getKey().equals(L_BRACKET)) {
-                nonOperandStack.push(currPair);
-            } else if (currPair.getKey().equals(R_BRACKET)) {
-                insertBracketsPart(postfixEquation, nonOperandStack);
-            } else if (currPair.getValue().equals(Type.OPERATOR)) {
-                insertByPrecedence(postfixEquation, nonOperandStack, currPair);
-            } else if (currPair.getValue().equals(Type.FUNCTION)) {
-                nonOperandStack.push(currPair);
-            } else {
+            if (currPair.getValue().equals(Type.OPERAND))
                 postfixEquation.add(currPair);
-            }
+            else if (currPair.getKey().equals(L_BRACKET))
+                operatorStack.push(currPair);
+            else if (currPair.getKey().equals(R_BRACKET))
+                insertBracketsPart(postfixEquation, operatorStack);
+            else
+                insertByPrecedence(postfixEquation, operatorStack, currPair);
         }
-        addRemaining(postfixEquation, nonOperandStack);
+        addRemaining(postfixEquation, operatorStack);
         return postfixEquation;
     }
 
     private static void insertByPrecedence(ArrayList<Pair<String, Type>> postfixEquation,
                                            Stack<Pair<String, Type>> operatorStack,
                                            Pair<String, Type> currPair) {
-        if (operatorStack.isEmpty()) {
-            operatorStack.push(currPair);
-        } else {
-            while (!operatorStack.isEmpty() && isAnOperator(operatorStack.peek())
-                    && isHigherPrecedence(currPair.getKey(),
-                    operatorStack.peek().getKey())) {
-                postfixEquation.add(operatorStack.pop());
-            }
-            operatorStack.push(currPair);
+        while (!operatorStack.isEmpty()
+                && (operatorStack.peek().getValue().equals(Type.FUNCTION)
+                || isHigherPrecedence(operatorStack.peek(), currPair))
+                && !operatorStack.peek().getKey().equals(L_BRACKET)) {
+            postfixEquation.add(operatorStack.pop());
         }
+        operatorStack.push(currPair);
     }
 
     private static void addRemaining(ArrayList<Pair<String, Type>> postfixEquation,
                                      Stack<Pair<String, Type>> operatorStack) {
-        while (!operatorStack.isEmpty()) {
+        while (!operatorStack.isEmpty())
             postfixEquation.add(operatorStack.pop());
-        }
     }
 
     private static void insertBracketsPart(ArrayList<Pair<String, Type>> postfixEquation,
@@ -63,14 +56,12 @@ public class InfixToPostfix {
         boolean insertedBracketsContents = false;
         isStandaloneBracket(operatorStack);
         while (!operatorStack.peek().getKey().equals(L_BRACKET)) {
-            if (!operatorStack.peek().getKey().equals(R_BRACKET)) {
-                postfixEquation.add(operatorStack.pop());
-                insertedBracketsContents = true;
-            }
+            postfixEquation.add(operatorStack.pop());
+            insertedBracketsContents = true;
         }
+        if (operatorStack.peek().getKey().equals(L_BRACKET))
+            operatorStack.pop();
         isEmptyBrackets(insertedBracketsContents, postfixEquation);
-        operatorStack.pop();
-        isFunctionBrackets(operatorStack, postfixEquation);
     }
 
     private static void isStandaloneBracket(Stack<Pair<String, Type>> operatorStack) {
@@ -79,25 +70,26 @@ public class InfixToPostfix {
     }
 
     private static void isEmptyBrackets(boolean inserted, ArrayList<Pair<String, Type>> postfixEquation) {
-        if (!inserted && !postfixEquation.get(postfixEquation.size() - 1).getValue().equals(Type.OPERAND))
+        if (!inserted && (postfixEquation.size() == 0
+                || !postfixEquation.get(postfixEquation.size() - 1).getValue().equals(Type.OPERAND)))
             throw new ArithmeticException(EMPTY_BRACKETS_ERROR);
     }
 
-    private static void isFunctionBrackets(Stack<Pair<String, Type>> operatorStack,
-                                              ArrayList<Pair<String, Type>> postfixEquation) {
-        if (operatorStack.peek().getValue().equals(Type.FUNCTION)) {
-            postfixEquation.add(operatorStack.pop());
-        }
+    private static boolean isHigherPrecedence(Pair<String, Type> stackSymbolPair, Pair<String, Type> currSymbolPair) {
+        Symbol stackSymbol = isOperatorOrFunction(stackSymbolPair);
+        Symbol currSymbol = isOperatorOrFunction(currSymbolPair);
+        return (stackSymbol.getPrecedence() >= currSymbol.getPrecedence());
     }
 
-    private static boolean isHigherPrecedence(String operatorText, String subOperatorText) {
+    private static Symbol isOperatorOrFunction(Pair<String, Type> currSymbol) {
+        Symbol symbol;
         OperatorFactory operatorFactory = new OperatorFactory();
-        Operator operator = operatorFactory.factory(operatorText);
-        Operator subOperator = operatorFactory.factory(subOperatorText);
-        return (operator.getPrecedence() >= subOperator.getPrecedence());
-    }
-
-    private static boolean isAnOperator(Pair<String, Type> token) {
-        return token.getValue().equals(Type.OPERATOR);
+        FunctionFactory functionFactory = new FunctionFactory();
+        if (currSymbol.getValue().equals(Type.FUNCTION)) {
+            symbol = functionFactory.factory(currSymbol.getKey());
+        } else {
+            symbol = operatorFactory.factory(currSymbol.getKey());
+        }
+        return symbol;
     }
 }

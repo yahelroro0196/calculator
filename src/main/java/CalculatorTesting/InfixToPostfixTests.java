@@ -36,8 +36,8 @@ public class InfixToPostfixTests {
 
     @Test
     public void complexEquationChallenge() {
-        ArrayList<Pair<String, Type>> complexDoubleInput = parseEquationString("%5*5^(10+2)");
-        ArrayList<Pair<String, Type>> complexDoubleExpected = parse("5 5 * 10 2 + ^ %");
+        ArrayList<Pair<String, Type>> complexDoubleInput = parseEquationString("cos(5)*5^(10+2)");
+        ArrayList<Pair<String, Type>> complexDoubleExpected = parse("5 c 5 10 2 + ^ *");
 
         ArrayList<Pair<String, Type>> complexDoubleOutput = InfixToPostfix.infixToPostfix(complexDoubleInput);
 

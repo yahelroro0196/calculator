@@ -15,8 +15,8 @@ import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
 public class PostfixToResultTests {
     @Test
     public void complexEquationChallenge() {
-        double complexEquationExpected = 0.23226162615901796;
-        ArrayList<Pair<String, Type>> complexEquationInput = parse("5 8 $ * %");
+        double complexEquationExpected = 0.999926248642623;
+        ArrayList<Pair<String, Type>> complexEquationInput = parse("8 s 5 * c");
 
         double complexEquationOutput = PostfixToResult.postfixToResult(complexEquationInput);
 

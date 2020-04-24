@@ -6,7 +6,7 @@ public class Divide extends Operator {
     protected int precedence = 2;
 
     @Override
-    public double calculateOperator(double leftOperand, double rightOperand) throws ArithmeticException {
+    public double calculate(double leftOperand, double rightOperand) throws ArithmeticException {
         if (isNotDividingByZero(rightOperand))
             return leftOperand / rightOperand;
         else
@@ -15,5 +15,9 @@ public class Divide extends Operator {
 
     public boolean isNotDividingByZero(double rightOperand) {
         return rightOperand != 0;
+    }
+
+    public int getPrecedence() {
+        return precedence;
     }
 }
