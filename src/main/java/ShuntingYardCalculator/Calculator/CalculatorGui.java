@@ -93,7 +93,7 @@ public class CalculatorGui {
     }
 
     public static void displayMenu() {
-        System.out.println("Welcome to the calculator!");
+        Log4j.displayInfo("Welcome to the calculator!");
         Log4j.displayInfo("Type an equation and hit enter.\nenter empty input twice to exit program");
         Log4j.displayInfo("The valid operators you can use are: " + VALID_OPERATORS);
         Log4j.displayInfo("The valid functions you can use are: " + VALID_FUNCTIONS);
@@ -102,22 +102,22 @@ public class CalculatorGui {
     }
 
     public static void displayResult(double result) {
-        System.out.println("Equation result is: " + result);
+        Log4j.displayInfo("Equation result is: " + result);
     }
 
     public static void displayExampleEquations() {
-        System.out.println("Example equations:");
-        System.out.println("5^8/(5*1)+10");
-        System.out.println("cos(5)*sin(8)");
-        System.out.println("sin(5)*5*(10+2)");
+        Log4j.displayInfo("Example equations:");
+        Log4j.displayInfo("5^8/(5*1)+10");
+        Log4j.displayInfo("cos(5)*sin(8)");
+        Log4j.displayInfo("sin(5)*5*(10+2)");
     }
 
     public static void displayOptions() {
-        System.out.println("Options:");
-        System.out.println("1: Enter an equation");
-        System.out.println("2: Enter a filename (.txt) with equations to solve");
-        System.out.println("3: Exit");
-        System.out.print("Chosen option: ");
+        Log4j.displayInfo("Options:");
+        Log4j.displayInfo("1: Enter an equation (Type \"Enter Equation\")");
+        Log4j.displayInfo("2: Enter a filename (.txt) with equations to solve (Type \"Enter File\")");
+        Log4j.displayInfo("3: Exit (Type \"Exit\")");
+        Log4j.displayInfo("Chosen option: ");
     }
 
     public static void displayGetEquation() {

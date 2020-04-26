@@ -7,11 +7,11 @@ import static ShuntingYardCalculator.Enums.MenuOption.*;
 public class OptionsFactory {
     public static MenuOption factory(String chosenOption) {
         switch (chosenOption) {
-            case "1":
+            case "Enter Equation":
                 return ENTER_EQUATION;
-            case "2":
+            case "Enter File":
                 return ENTER_FILENAME;
-            case "3":
+            case "Exit":
                 return EXIT;
             default:
                 return RETRY;

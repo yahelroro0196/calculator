@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import static CalculatorTesting.TestingParsers.ParsePostfixString.parse;
 import static ShuntingYardCalculator.Calculator.EquationParser.parseEquationString;
-import static ShuntingYardCalculator.ExceptionType.EMPTY_BRACKETS_ERROR;
 
 public class InfixToPostfixTests {
     @Test
@@ -23,15 +22,11 @@ public class InfixToPostfixTests {
         Assert.assertEquals(complexDoubleExpected, complexDoubleOutput);
     }
 
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void doubleEmptyBracketsWarning() {
         ArrayList<Pair<String, Type>> doubleEmptyInput = parseEquationString("(())");
 
-        try {
-            InfixToPostfix.infixToPostfix(doubleEmptyInput);
-        } catch (ArithmeticException e) {
-            Assert.assertEquals(e.getMessage(), EMPTY_BRACKETS_ERROR);
-        }
+        InfixToPostfix.infixToPostfix(doubleEmptyInput);
     }
 
     @Test

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 import static CalculatorTesting.TestingParsers.ParsePostfixString.parse;
-import static ShuntingYardCalculator.ExceptionType.INVALID_EQUATION_ERROR;
 
 public class PostfixToResultTests {
     @Test
@@ -23,14 +22,10 @@ public class PostfixToResultTests {
         Assert.assertEquals(complexEquationExpected, complexEquationOutput, 0.01);
     }
 
-    @Test
+    @Test(expected = InputMismatchException.class)
     public void doubleOperatorInputMismatch() {
         ArrayList<Pair<String, Type>> doubleOperatorInput = parse("/ /");
 
-        try {
-            PostfixToResult.postfixToResult(doubleOperatorInput);
-        } catch (InputMismatchException e) {
-            Assert.assertEquals(e.getMessage(), INVALID_EQUATION_ERROR);
-        }
+        PostfixToResult.postfixToResult(doubleOperatorInput);
     }
 }
