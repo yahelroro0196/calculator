@@ -32,14 +32,12 @@ public class EquationParser {
                 token = token + subToken;
                 splitEquation.remove(subToken);
             } else if (isFunction(token)) {
-                splitEquation.remove(subToken);
-                splitEquation.remove(splitEquation.get(nextNumIndex));
-                if (nextNumIndex == splitEquation.size() - 1) {
+                while (!splitEquation.get(nextNumIndex).equals(L_BRACKET))
+                    splitEquation.remove(splitEquation.get(nextNumIndex));
+                if (nextNumIndex == splitEquation.size() - 1)
                     insertLast = subToken;
-                }
-            } else if (nextNumIndex == splitEquation.size() - 1) {
+            } else if (nextNumIndex == splitEquation.size() - 1)
                 insertLast = subToken;
-            }
             buildInput(equation, token);
             currNumIndex++;
             nextNumIndex++;
