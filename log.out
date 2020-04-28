@@ -1,0 +1,350 @@
+2020-04-26 10:33:57 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:33:57 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:33:57 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:34:09 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:34:09 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:34:09 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:38:59 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:38:59 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:38:59 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:38:59 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:38:59 INFO  Log4j:10 - Example equations:
+2020-04-26 10:38:59 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:38:59 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:38:59 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:38:59 INFO  Log4j:10 - Options:
+2020-04-26 10:38:59 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:38:59 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:38:59 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:38:59 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:40:04 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:40:04 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:40:04 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:40:04 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:40:04 INFO  Log4j:10 - Example equations:
+2020-04-26 10:40:04 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:40:04 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:40:04 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:40:04 INFO  Log4j:10 - Options:
+2020-04-26 10:40:04 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:40:04 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:40:04 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:40:04 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:40:16 INFO  Log4j:10 - Equation result is: 35.0
+2020-04-26 10:40:16 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:40:16 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:40:16 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:40:16 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:40:16 INFO  Log4j:10 - Example equations:
+2020-04-26 10:40:16 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:40:16 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:40:16 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:40:16 INFO  Log4j:10 - Options:
+2020-04-26 10:40:16 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:40:16 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:40:16 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:40:16 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:41:02 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:41:02 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:41:02 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:41:02 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:41:02 INFO  Log4j:10 - Example equations:
+2020-04-26 10:41:02 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:41:02 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:41:02 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:41:02 INFO  Log4j:10 - Options:
+2020-04-26 10:41:02 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:41:02 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:41:02 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:41:02 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:41:19 INFO  Log4j:10 - Equation result is: 35.0
+2020-04-26 10:41:19 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:41:19 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:41:19 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:41:19 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:41:19 INFO  Log4j:10 - Example equations:
+2020-04-26 10:41:19 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:41:19 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:41:19 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:41:19 INFO  Log4j:10 - Options:
+2020-04-26 10:41:19 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:41:19 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:41:19 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:41:19 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:41:48 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:41:48 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:41:48 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:41:48 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:41:48 INFO  Log4j:10 - Example equations:
+2020-04-26 10:41:48 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:41:48 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:41:48 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:41:48 INFO  Log4j:10 - Options:
+2020-04-26 10:41:48 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:41:48 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:41:48 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:41:48 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:41:49 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:41:49 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:41:49 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:41:49 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:41:49 INFO  Log4j:10 - Example equations:
+2020-04-26 10:41:49 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:41:49 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:41:49 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:41:49 INFO  Log4j:10 - Options:
+2020-04-26 10:41:49 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:41:49 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:41:49 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:41:49 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:42:29 INFO  Log4j:10 - Equation result is: 35.0
+2020-04-26 10:42:29 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:42:29 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:42:29 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:42:29 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:42:29 INFO  Log4j:10 - Example equations:
+2020-04-26 10:42:29 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:42:29 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:42:29 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:42:29 INFO  Log4j:10 - Options:
+2020-04-26 10:42:29 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:42:29 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:42:29 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:42:29 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:45:06 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:45:06 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:45:06 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:45:06 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:45:06 INFO  Log4j:10 - Example equations:
+2020-04-26 10:45:06 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:45:06 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:45:06 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:45:06 INFO  Log4j:10 - Options:
+2020-04-26 10:45:06 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:45:06 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:45:06 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:45:06 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:46:42 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:46:42 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:46:42 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:46:42 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:46:42 INFO  Log4j:10 - Example equations:
+2020-04-26 10:46:42 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:46:42 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:46:42 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:46:42 INFO  Log4j:10 - Options:
+2020-04-26 10:46:42 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:46:42 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:46:42 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:46:42 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:47:20 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:47:20 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:47:20 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:47:20 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:47:20 INFO  Log4j:10 - Example equations:
+2020-04-26 10:47:20 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:47:20 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:47:20 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:47:20 INFO  Log4j:10 - Options:
+2020-04-26 10:47:20 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:47:20 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:47:20 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:47:20 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:48:31 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:48:31 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:48:31 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:48:31 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:48:31 INFO  Log4j:10 - Example equations:
+2020-04-26 10:48:31 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:48:31 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:48:31 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:48:31 INFO  Log4j:10 - Options:
+2020-04-26 10:48:31 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:48:31 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:48:31 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:48:31 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:48:32 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:48:32 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:48:32 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:48:32 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:48:32 INFO  Log4j:10 - Example equations:
+2020-04-26 10:48:32 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:48:32 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:48:32 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:48:32 INFO  Log4j:10 - Options:
+2020-04-26 10:48:32 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:48:32 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:48:32 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:48:32 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:49:04 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:49:04 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:49:04 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:49:04 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:49:04 INFO  Log4j:10 - Example equations:
+2020-04-26 10:49:04 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:49:04 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:49:04 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:49:04 INFO  Log4j:10 - Options:
+2020-04-26 10:49:04 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:49:04 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:49:04 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:49:04 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:49:27 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:49:27 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:49:27 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:49:27 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:49:27 INFO  Log4j:10 - Example equations:
+2020-04-26 10:49:27 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:49:27 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:49:27 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:49:27 INFO  Log4j:10 - Options:
+2020-04-26 10:49:27 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:49:27 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:49:27 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:49:27 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:51:56 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:51:56 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:51:56 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:51:56 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:51:56 INFO  Log4j:10 - Example equations:
+2020-04-26 10:51:56 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:51:56 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:51:56 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:51:56 INFO  Log4j:10 - Options:
+2020-04-26 10:51:56 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:51:56 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:51:56 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:51:56 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:52:39 INFO  Log4j:10 - Equation result is: 347.70710678118655
+2020-04-26 10:52:39 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:52:39 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:52:39 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:52:39 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:52:39 INFO  Log4j:10 - Example equations:
+2020-04-26 10:52:39 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:52:39 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:52:39 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:52:39 INFO  Log4j:10 - Options:
+2020-04-26 10:52:39 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:52:39 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:52:39 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:52:39 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:52:43 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:52:43 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:52:43 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:52:43 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:52:43 INFO  Log4j:10 - Example equations:
+2020-04-26 10:52:43 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:52:43 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:52:43 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:52:43 INFO  Log4j:10 - Options:
+2020-04-26 10:52:43 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:52:43 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:52:43 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:52:43 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:53:41 INFO  Log4j:10 - Equation result is: 347.70710678118655
+2020-04-26 10:53:41 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:53:41 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:53:41 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:53:41 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:53:41 INFO  Log4j:10 - Example equations:
+2020-04-26 10:53:41 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:53:41 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:53:41 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:53:41 INFO  Log4j:10 - Options:
+2020-04-26 10:53:41 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:53:41 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:53:41 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:53:41 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:53:56 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:53:56 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:53:56 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:53:56 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:53:56 INFO  Log4j:10 - Example equations:
+2020-04-26 10:53:56 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:53:56 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:53:56 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:53:56 INFO  Log4j:10 - Options:
+2020-04-26 10:53:56 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:53:56 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:53:56 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:53:56 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:54:17 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:54:17 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:54:17 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:54:17 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:54:17 INFO  Log4j:10 - Example equations:
+2020-04-26 10:54:17 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:54:17 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:54:17 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:54:17 INFO  Log4j:10 - Options:
+2020-04-26 10:54:17 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:54:17 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:54:17 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:54:17 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:55:57 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:55:57 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:55:57 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:55:57 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:55:57 INFO  Log4j:10 - Example equations:
+2020-04-26 10:55:57 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:55:57 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:55:57 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:55:57 INFO  Log4j:10 - Options:
+2020-04-26 10:55:57 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:55:57 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:55:57 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:55:57 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:56:48 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:56:48 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:56:48 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:56:48 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:56:48 INFO  Log4j:10 - Example equations:
+2020-04-26 10:56:48 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:56:48 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:56:48 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:56:48 INFO  Log4j:10 - Options:
+2020-04-26 10:56:48 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:56:48 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:56:48 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:56:48 INFO  Log4j:10 - Chosen option: 
+2020-04-26 10:57:29 INFO  Log4j:10 - Equation result is: 347.70710678118655
+2020-04-26 10:57:29 INFO  Log4j:10 - Welcome to the calculator!
+2020-04-26 10:57:29 INFO  Log4j:10 - Type an equation and hit enter.
+enter empty input twice to exit program
+2020-04-26 10:57:29 INFO  Log4j:10 - The valid operators you can use are: [+, -, *, /, (, ), ^]
+2020-04-26 10:57:29 INFO  Log4j:10 - The valid functions you can use are: [c, s, t]
+2020-04-26 10:57:29 INFO  Log4j:10 - Example equations:
+2020-04-26 10:57:29 INFO  Log4j:10 - 5^8/(5*1)+10
+2020-04-26 10:57:29 INFO  Log4j:10 - cos(5)*sin(8)
+2020-04-26 10:57:29 INFO  Log4j:10 - sin(5)*5*(10+2)
+2020-04-26 10:57:29 INFO  Log4j:10 - Options:
+2020-04-26 10:57:29 INFO  Log4j:10 - 1: Enter an equation (Type "Enter Equation")
+2020-04-26 10:57:29 INFO  Log4j:10 - 2: Enter a filename (.txt) with equations to solve (Type "Enter File")
+2020-04-26 10:57:29 INFO  Log4j:10 - 3: Exit (Type "Exit")
+2020-04-26 10:57:29 INFO  Log4j:10 - Chosen option: 
